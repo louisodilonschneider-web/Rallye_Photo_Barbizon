@@ -1,0 +1,3410 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rallye Photo – Barbizon 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --vert: #2d4a2d;
+    --vert-clair: #4a7a4a;
+    --ocre: #c8843a;
+    --ocre-clair: #e8b06a;
+    --creme: #f5f0e8;
+    --brun: #5c3d1e;
+    --gris: #8a8078;
+    --blanc: #fdfaf5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--creme);
+    font-family: 'Libre Baskerville', serif;
+    color: var(--brun);
+    min-height: 100vh;
+  }
+
+  /* ── COUVERTURE ── */
+  .cover {
+    background: var(--vert);
+    color: var(--creme);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    border-radius: 50%;
+    background: rgba(200,132,58,.15);
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(200,132,58,.10);
+  }
+
+  .cover-badge {
+    display: inline-block;
+    border: 1.5px solid var(--ocre-clair);
+    color: var(--ocre-clair);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    margin-bottom: 22px;
+  }
+
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .cover h1 em {
+    font-style: italic;
+    color: var(--ocre-clair);
+  }
+
+  .cover-sub {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(245,240,232,.6);
+    margin-bottom: 28px;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    margin-top: 6px;
+  }
+
+  .meta-item {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    color: rgba(245,240,232,.75);
+    letter-spacing: 1px;
+  }
+  .meta-item strong {
+    display: block;
+    color: var(--ocre-clair);
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+
+  .cover-divider {
+    width: 60px;
+    height: 2px;
+    background: var(--ocre);
+    margin: 24px 0;
+  }
+
+  /* ── RÈGLES ── */
+  .section-rules {
+    background: var(--blanc);
+    padding: 36px 36px 30px;
+    border-bottom: 3px solid var(--vert);
+  }
+
+  .section-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--vert-clair);
+    margin-bottom: 16px;
+  }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .rule-card {
+    background: var(--creme);
+    border-left: 3px solid var(--ocre);
+    padding: 12px 16px;
+  }
+
+  .rule-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--vert);
+    margin-bottom: 4px;
+  }
+
+  .rule-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--brun);
+  }
+
+  /* ── GROUPES ── */
+  .groups-header {
+    background: var(--ocre);
+    color: var(--blanc);
+    padding: 28px 36px 24px;
+  }
+
+  .groups-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 4px;
+  }
+
+  .groups-header p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: .85;
+  }
+
+  /* ── GROUPE CARD ── */
+  .groupe {
+    padding: 32px 36px;
+    border-bottom: 1px solid rgba(92,61,30,.15);
+    background: var(--blanc);
+  }
+
+  .groupe:nth-child(even) {
+    background: var(--creme);
+  }
+
+  .groupe-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 24px;
+  }
+
+  .groupe-num {
+    background: var(--vert);
+    color: var(--blanc);
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .groupe-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--vert);
+    margin-bottom: 4px;
+  }
+
+  .groupe-info .route-tag {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ocre);
+  }
+
+  /* ── TABLE PHOTOS ── */
+  .photos-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .photos-table thead th {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris);
+    border-bottom: 2px solid var(--ocre);
+    padding: 8px 10px;
+    text-align: left;
+  }
+
+  .photos-table tbody tr {
+    border-bottom: 1px solid rgba(92,61,30,.08);
+    transition: background .15s;
+  }
+
+  .photos-table tbody tr:hover {
+    background: rgba(200,132,58,.06);
+  }
+
+  .photos-table td {
+    padding: 11px 10px;
+    vertical-align: top;
+  }
+
+  .photo-num {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ocre);
+    width: 36px;
+  }
+
+  .photo-lieu {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--vert);
+    line-height: 1.3;
+  }
+
+  .photo-desc {
+    font-size: 12px;
+    color: var(--gris);
+    line-height: 1.5;
+    margin-top: 2px;
+  }
+
+  .photo-indice {
+    font-size: 12px;
+    color: var(--brun);
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  .photo-pts {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--vert-clair);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .pts-bonus {
+    color: var(--ocre);
+  }
+
+  /* ── BONUS TAG ── */
+  .bonus-tag {
+    display: inline-block;
+    background: var(--ocre);
+    color: var(--blanc);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 9px;
+    letter-spacing: 1px;
+    padding: 2px 6px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+
+  /* ── TOTAL GROUPE ── */
+  .groupe-total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 14px;
+    padding-top: 10px;
+    border-top: 2px solid var(--ocre);
+  }
+
+  .total-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris);
+    margin-right: 12px;
+    align-self: center;
+  }
+
+  .total-pts {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--vert);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--vert);
+    color: rgba(245,240,232,.6);
+    text-align: center;
+    padding: 22px 36px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  footer strong {
+    color: var(--ocre-clair);
+  }
+
+  /* ── CRITÈRES ── */
+  .criteria-bar {
+    background: var(--brun);
+    color: var(--creme);
+    padding: 20px 36px;
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .criteria-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: .7;
+    flex-shrink: 0;
+  }
+
+  .criteria-item {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--ocre);
+    flex-shrink: 0;
+  }
+
+  /* ── PLAN INTERACTIF ── */
+  .map-section {
+    background: var(--blanc);
+    border-bottom: 3px solid var(--vert);
+  }
+
+  .map-header {
+    padding: 28px 36px 16px;
+  }
+
+  #map {
+    width: 100%;
+    height: 480px;
+    border-top: 1px solid rgba(92,61,30,.12);
+  }
+
+  .map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    padding: 0 36px 18px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: .5px;
+    color: var(--brun);
+  }
+
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  @media print {
+    .groupe { page-break-inside: avoid; }
+    #map { display: none; }
+  }
+
+  /* ── ONGLETS ── */
+  .tabs-nav {
+    background: var(--vert);
+    display: flex;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  .tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: rgba(245,240,232,.55);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 16px 10px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all .2s;
+  }
+  .tab-btn.active {
+    color: var(--ocre-clair);
+    border-bottom-color: var(--ocre);
+    background: rgba(255,255,255,.06);
+  }
+  .tab-btn:hover:not(.active) {
+    color: rgba(245,240,232,.85);
+    background: rgba(255,255,255,.04);
+  }
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+
+  /* ── NOTATION — LOCK SCREEN ── */
+  .lock-screen {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--creme);
+    padding: 60px 20px;
+    text-align: center;
+  }
+  .lock-icon { font-size: 56px; margin-bottom: 20px; }
+  .lock-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--vert);
+    margin-bottom: 8px;
+  }
+  .lock-sub {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--gris);
+    margin-bottom: 32px;
+  }
+  .lock-input-wrap {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .lock-input {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    letter-spacing: 8px;
+    text-align: center;
+    width: 130px;
+    padding: 12px 16px;
+    border: 2px solid var(--ocre);
+    background: var(--blanc);
+    color: var(--brun);
+    outline: none;
+  }
+  .lock-btn {
+    background: var(--vert);
+    color: var(--blanc);
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    cursor: pointer;
+    transition: background .2s;
+  }
+  .lock-btn:hover { background: var(--vert-clair); }
+  .lock-error {
+    color: #b03a2e;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-top: 12px;
+    display: none;
+  }
+
+  /* ── NOTATION — CONTENU ── */
+  .notation-wrap { display: none; background: var(--creme); }
+  .notation-header {
+    background: var(--vert);
+    color: var(--creme);
+    padding: 28px 36px 22px;
+  }
+  .notation-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 4px;
+  }
+  .notation-header p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    opacity: .75;
+  }
+
+  /* ── CLASSEMENT ── */
+  .classement-section {
+    background: var(--blanc);
+    padding: 28px 36px;
+    border-bottom: 3px solid var(--vert);
+  }
+  .classement-title {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--vert-clair);
+    margin-bottom: 16px;
+  }
+  .podium-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .podium-card {
+    background: var(--creme);
+    border: 2px solid transparent;
+    padding: 16px;
+    text-align: center;
+    position: relative;
+    transition: transform .2s;
+  }
+  .podium-card.p1 { border-color: #d4af37; background: #fffbf0; }
+  .podium-card.p2 { border-color: #aaa; background: #f8f8f8; }
+  .podium-card.p3 { border-color: #cd7f32; background: #fff8f5; }
+  .podium-medal { font-size: 28px; margin-bottom: 4px; }
+  .podium-groupe {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--vert);
+    font-weight: 700;
+  }
+  .podium-nom {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--gris);
+    margin: 2px 0 8px;
+  }
+  .podium-score {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: var(--ocre);
+  }
+  .podium-score span {
+    font-size: 12px;
+    color: var(--gris);
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .ranking-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .ranking-table th {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris);
+    border-bottom: 2px solid var(--ocre);
+    padding: 8px 10px;
+    text-align: left;
+  }
+  .ranking-table td {
+    padding: 10px 10px;
+    border-bottom: 1px solid rgba(92,61,30,.08);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+  }
+  .rank-pos { font-weight: 700; color: var(--ocre); width: 36px; }
+  .rank-groupe { font-weight: 700; color: var(--vert); }
+  .rank-nom { color: var(--gris); font-size: 12px; }
+  .rank-score { font-weight: 700; color: var(--brun); text-align: right; }
+  .rank-bar-wrap { width: 120px; }
+  .rank-bar {
+    height: 8px;
+    background: var(--ocre);
+    border-radius: 4px;
+    transition: width .6s ease;
+  }
+
+  /* ── GRILLE DE NOTATION ── */
+  .notation-groupe-card {
+    background: var(--blanc);
+    margin: 0;
+    border-bottom: 1px solid rgba(92,61,30,.1);
+    padding: 24px 36px;
+  }
+  .notation-groupe-card:nth-child(even) { background: var(--creme); }
+
+  .ng-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .ng-num {
+    background: var(--vert);
+    color: var(--blanc);
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    width: 48px; height: 48px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .ng-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--vert);
+    flex: 1;
+  }
+  .ng-total-badge {
+    background: var(--ocre);
+    color: var(--blanc);
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    padding: 4px 14px;
+    border-radius: 2px;
+  }
+  .ng-toggle {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+    color: var(--gris);
+    margin-left: 8px;
+  }
+
+  .ng-photos { }
+  .ng-photo-row {
+    display: grid;
+    grid-template-columns: 30px 1fr 90px 60px 60px;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(92,61,30,.07);
+  }
+  .ng-photo-row:last-child { border-bottom: none; }
+  .ng-photo-num {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 12px;
+    color: var(--ocre);
+    font-weight: 700;
+    text-align: center;
+  }
+  .ng-photo-name {
+    font-size: 13px;
+    color: var(--brun);
+    line-height: 1.3;
+  }
+  .ng-photo-name small { display: block; font-size: 11px; color: var(--gris); }
+  .ng-checkbox-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .ng-checkbox {
+    width: 22px; height: 22px;
+    accent-color: var(--vert);
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .ng-pts-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    color: var(--gris);
+    text-align: center;
+  }
+  .ng-bonus-wrap {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: center;
+  }
+  .ng-bonus-check {
+    width: 18px; height: 18px;
+    accent-color: var(--ocre);
+    cursor: pointer;
+  }
+  .ng-bonus-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px;
+    color: var(--ocre);
+  }
+  .ng-retard-wrap {
+    background: var(--creme);
+    border-left: 3px solid #b03a2e;
+    padding: 10px 14px;
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .ng-retard-label {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    color: #b03a2e;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .ng-retard-input {
+    width: 60px;
+    border: 1px solid #b03a2e;
+    padding: 4px 8px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 14px;
+    color: #b03a2e;
+    text-align: center;
+    background: var(--blanc);
+  }
+  .save-btn {
+    background: var(--vert);
+    color: var(--blanc);
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    cursor: pointer;
+    margin-top: 14px;
+    transition: background .2s;
+  }
+  .save-btn:hover { background: var(--vert-clair); }
+  .save-confirm {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 11px;
+    color: var(--vert-clair);
+    letter-spacing: 1px;
+    margin-top: 6px;
+    display: none;
+  }
+
+  .logout-btn {
+    background: transparent;
+    border: 1px solid rgba(245,240,232,.35);
+    color: rgba(245,240,232,.7);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    cursor: pointer;
+    float: right;
+    margin-top: 4px;
+  }
+  .logout-btn:hover { border-color: var(--ocre-clair); color: var(--ocre-clair); }
+</style>
+</head>
+<body>
+
+<!-- ONGLETS NAV -->
+<nav class="tabs-nav">
+  <button class="tab-btn active" onclick="switchTab('participants')">📷 Fiche de Route</button>
+  <button class="tab-btn" onclick="switchTab('eleves')">📸 Dépôt Photos</button>
+  <button class="tab-btn" onclick="switchTab('classement')">🏆 Classement</button>
+  <button class="tab-btn" onclick="switchTab('notation')">🏅 Notation Enseignant</button>
+</nav>
+
+<!-- ONGLET 1 : PARTICIPANTS -->
+<div id="tab-participants" class="tab-pane active">
+
+<!-- COUVERTURE -->
+<div class="cover">
+  <div class="cover-badge">Fiche de Route Officielle</div>
+  <h1>Rallye Photo<br><em>Barbizon</em></h1>
+  <div class="cover-sub">Village des Peintres · Forêt de Fontainebleau</div>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <div class="meta-item"><strong>6 Groupes</strong>Parcours distincts</div>
+    <div class="meta-item"><strong>10 Photos</strong>Par équipe</div>
+    <div class="meta-item"><strong>2 heures</strong>Durée estimée</div>
+    <div class="meta-item"><strong>~3 km</strong>Distance totale</div>
+  </div>
+</div>
+
+<!-- RÈGLES -->
+<div class="section-rules">
+  <div class="section-title">Règlement du rallye</div>
+  <div class="rules-grid">
+    <div class="rule-card">
+      <div class="rule-title">📷 Photos à rendre</div>
+      <div class="rule-text">Chaque groupe doit photographier exactement 10 sujets listés dans sa fiche. La photo doit clairement identifier le sujet demandé.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-title">⏱ Temps imparti</div>
+      <div class="rule-text">2 heures à partir du signal de départ. Toute équipe en retard perd 5 points par tranche de 10 minutes.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-title">🏅 Points</div>
+      <div class="rule-text">Chaque photo rapporte 10 pts. Les bonus créatifs (cadrage, lumière, originalité) peuvent ajouter jusqu'à +5 pts par cliché.</div>
+    </div>
+    <div class="rule-card">
+      <div class="rule-title">📍 Ordre libre</div>
+      <div class="rule-text">L'ordre de visite des spots est libre, mais le parcours suggéré optimise le trajet. Restez dans les limites de Barbizon et de la lisière de forêt.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CRITÈRES -->
+<div class="criteria-bar">
+  <span class="criteria-title">Critères d'évaluation</span>
+  <span class="criteria-item"><span class="dot"></span>Identification du sujet (obligatoire)</span>
+  <span class="criteria-item"><span class="dot"></span>Composition & cadrage</span>
+  <span class="criteria-item"><span class="dot"></span>Lumière & exposition</span>
+  <span class="criteria-item"><span class="dot"></span>Originalité du point de vue</span>
+</div>
+
+<!-- PLAN INTERACTIF -->
+<div class="map-section">
+  <div class="map-header">
+    <div class="section-title" style="margin-bottom:6px;">Plan d'orientation</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:26px;color:var(--vert);margin-bottom:4px;">Carte des points photographiques</h2>
+    <p style="font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:1px;color:var(--gris);">Cliquez sur un marqueur pour afficher le détail · Filtrez par groupe pour voir uniquement vos repères</p>
+  </div>
+
+  <!-- Filtres par groupe -->
+  <div class="map-filters">
+    <span class="map-filter-label">Afficher</span>
+    <button class="map-filter-btn active" data-group="all" onclick="filterMap('all',this)">
+      Tous les repères
+    </button>
+    <button class="map-filter-btn" data-group="A" onclick="filterMap('A',this)" style="--fc:#2d6a2d;">
+      <span class="map-filter-dot" style="background:#2d6a2d;"></span>Groupe A
+    </button>
+    <button class="map-filter-btn" data-group="B" onclick="filterMap('B',this)" style="--fc:#1a5276;">
+      <span class="map-filter-dot" style="background:#1a5276;"></span>Groupe B
+    </button>
+    <button class="map-filter-btn" data-group="C" onclick="filterMap('C',this)" style="--fc:#7d3c98;">
+      <span class="map-filter-dot" style="background:#7d3c98;"></span>Groupe C
+    </button>
+    <button class="map-filter-btn" data-group="D" onclick="filterMap('D',this)" style="--fc:#b7950b;">
+      <span class="map-filter-dot" style="background:#b7950b;"></span>Groupe D
+    </button>
+    <button class="map-filter-btn" data-group="E" onclick="filterMap('E',this)" style="--fc:#b03a2e;">
+      <span class="map-filter-dot" style="background:#b03a2e;"></span>Groupe E
+    </button>
+    <button class="map-filter-btn" data-group="F" onclick="filterMap('F',this)" style="--fc:#1a7a7a;">
+      <span class="map-filter-dot" style="background:#1a7a7a;"></span>Groupe F
+    </button>
+  </div>
+
+  <!-- Légende dynamique -->
+  <div class="map-legend" id="mapLegend">
+    <div class="legend-item"><span class="legend-dot" style="background:#2d6a2d;"></span>Groupe A — École des Peintres</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#1a5276;"></span>Groupe B — Forêt</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#7d3c98;"></span>Groupe C — Vie de Village</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#b7950b;"></span>Groupe D — Lumières & Textures</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#b03a2e;"></span>Groupe E — Détails & Miniatures</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#1a7a7a;"></span>Groupe F — Contrastes & Temps</div>
+    <div class="legend-item"><span class="legend-dot" style="background:#c8843a;border:2px solid #5c3d1e;"></span>Départ / Arrivée</div>
+  </div>
+
+  <div id="map"></div>
+</div>
+
+<!-- Firebase SDK (CDN compat) — chargé AVANT Leaflet pour éviter ReferenceError -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<!-- Firebase Storage remplacé par Cloudinary -->
+
+<!-- Leaflet CSS + JS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<style>
+/* ── FILTRES CARTE ── */
+.map-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 36px 16px;
+  align-items: center;
+}
+.map-filter-label {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gris);
+  margin-right: 4px;
+  flex-shrink: 0;
+}
+.map-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border: 1.5px solid rgba(92,61,30,.2);
+  background: var(--blanc);
+  color: var(--brun);
+  cursor: pointer;
+  transition: all .18s;
+  border-radius: 2px;
+}
+.map-filter-btn:hover {
+  border-color: var(--ocre);
+  background: rgba(200,132,58,.06);
+}
+.map-filter-btn.active {
+  background: var(--vert);
+  color: var(--blanc);
+  border-color: var(--vert);
+}
+.map-filter-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .map-filters { padding: 0 16px 14px; }
+  .map-filter-btn { font-size: 10px; padding: 5px 10px; }
+}
+</style>
+<script>
+(function(){
+// ════════════════════════════════════════════════════════════════
+//  REPERES — 10 points numerotes 1→10 par groupe + depart commun
+// ════════════════════════════════════════════════════════════════
+var GROUPE_COLORS={A:'#2d6a2d',B:'#1a5276',C:'#7d3c98',D:'#b7950b',E:'#b03a2e',F:'#1a7a7a'};
+var DEPART={lat:48.44602,lng:2.60297,name:"Office de Tourisme — Départ & Arrivée",addr:"84 bis Grande Rue"};
+var REPERES=[
+  {g:'A',n:1, lat:48.44621,lng:2.60263,name:"Auberge Ganne — Musée des Peintres",      addr:"92 Grande Rue"},
+  {g:'A',n:2, lat:48.44550,lng:2.60487,name:"Maison-atelier de Théodore Rousseau",     addr:"55 Grande Rue"},
+  {g:'A',n:3, lat:48.44435,lng:2.60797,name:"Atelier Jean-François Millet",            addr:"27 Grande Rue"},
+  {g:'A',n:4, lat:48.44600,lng:2.60350,name:"Mosaïque murale — Grande Rue",            addr:"Grande Rue (nord)"},
+  {g:'A',n:5, lat:48.44510,lng:2.60560,name:"Plaque commémorative d'artiste",         addr:"Grande Rue (centre)"},
+  {g:'A',n:6, lat:48.44480,lng:2.60650,name:"Grande Rue — Perspective urbaine",        addr:"Grande Rue"},
+  {g:'A',n:7, lat:48.44520,lng:2.60720,name:"Galerie d'art — Vitrine",               addr:"Grande Rue (sud)"},
+  {g:'A',n:8, lat:48.44430,lng:2.60958,name:"Hôtellerie du Bas-Bréau",                addr:"22 Grande Rue"},
+  {g:'A',n:9, lat:48.44602,lng:2.60297,name:"Office de Tourisme — Photo de groupe",    addr:"84 bis Grande Rue"},
+  {g:'A',n:10,lat:48.44460,lng:2.60880,name:"Détail architectural insolite (JOKER)",   addr:"Village au choix"},
+  {g:'B',n:1, lat:48.44150,lng:2.60850,name:"Panneau d'entrée de forêt",              addr:"Sortie sud Grande Rue"},
+  {g:'B',n:2, lat:48.43855,lng:2.60781,name:"Rocher de l'Éléphant",                  addr:"Gorges d'Apremont"},
+  {g:'B',n:3, lat:48.43930,lng:2.60950,name:"Médaillon Millet-Rousseau",               addr:"Circuit balisé jaune"},
+  {g:'B',n:4, lat:48.43780,lng:2.61050,name:"Stèle de la Première Réserve (1861)",    addr:"Forêt de Fontainebleau"},
+  {g:'B',n:5, lat:48.43650,lng:2.60900,name:"Chaos d'Apremont — Rochers de grès",    addr:"Forêt de Fontainebleau"},
+  {g:'B',n:6, lat:48.43700,lng:2.61200,name:"Chêne Sully ou Chêne Charlemagne",       addr:"Forêt de Fontainebleau"},
+  {g:'B',n:7, lat:48.44000,lng:2.61100,name:"Balisage jaune du circuit des peintres",  addr:"Circuit des peintres"},
+  {g:'B',n:8, lat:48.43820,lng:2.60650,name:"Lumière en sous-bois",                    addr:"Forêt de Fontainebleau"},
+  {g:'B',n:9, lat:48.43900,lng:2.61300,name:"Tableau de J.B.C. Corot (chevalet)",     addr:"Forêt de Fontainebleau"},
+  {g:'B',n:10,lat:48.43550,lng:2.61000,name:"Paysage de forêt — Vue libre (JOKER)",   addr:"Forêt au choix"},
+  {g:'C',n:1, lat:48.44580,lng:2.60420,name:"Boulangerie ou commerce traditionnel",   addr:"Grande Rue"},
+  {g:'C',n:2, lat:48.44620,lng:2.60310,name:"L'Esquisse — Café culturel",            addr:"84 Grande Rue"},
+  {g:'C',n:3, lat:48.44528,lng:2.60484,name:"Église Notre-Dame de la Persévérance",   addr:"Grande Rue"},
+  {g:'C',n:4, lat:48.44312,lng:2.61009,name:"Mairie de Barbizon",                     addr:"13 Grande Rue"},
+  {g:'C',n:5, lat:48.44490,lng:2.60820,name:"La Folie Barbizon — Restaurant",         addr:"Grande Rue"},
+  {g:'C',n:6, lat:48.44524,lng:2.60703,name:"Besharat Gallery — Jardin sculptures",   addr:"40 Grande Rue"},
+  {g:'C',n:7, lat:48.44400,lng:2.60600,name:"Fontaine ou point d'eau du village",    addr:"Grande Rue"},
+  {g:'C',n:8, lat:48.44350,lng:2.60750,name:"Mur de pierre ou portail ancien",        addr:"Grande Rue / ruelles"},
+  {g:'C',n:9, lat:48.44590,lng:2.60180,name:"Panneau d'entrée du village — Selfie",  addr:"Entrée de Barbizon"},
+  {g:'C',n:10,lat:48.44460,lng:2.60950,name:"Portrait d'habitant (JOKER)",           addr:"Village au choix"},
+  {g:'D',n:1, lat:48.44100,lng:2.60820,name:"Rayon de lumière en sous-bois",          addr:"Lisière de forêt"},
+  {g:'D',n:2, lat:48.43855,lng:2.60781,name:"Texture de rocher de grès (macro)",      addr:"Forêt de Fontainebleau"},
+  {g:'D',n:3, lat:48.44550,lng:2.60700,name:"Reflet dans une surface brillante",      addr:"Village ou forêt"},
+  {g:'D',n:4, lat:48.44480,lng:2.60550,name:"Ombre portée géométrique",               addr:"Village ou forêt"},
+  {g:'D',n:5, lat:48.43700,lng:2.60900,name:"Écorce d'arbre centenaire",             addr:"Forêt de Fontainebleau"},
+  {g:'D',n:6, lat:48.44500,lng:2.60400,name:"Pierre ancienne — Façade Grande Rue",    addr:"Grande Rue"},
+  {g:'D',n:7, lat:48.44350,lng:2.60650,name:"Couleur dominante — Monochrome naturel", addr:"Village ou forêt"},
+  {g:'D',n:8, lat:48.44430,lng:2.60850,name:"Pavé ou sol ancien",                     addr:"Ruelles du village"},
+  {g:'D',n:9, lat:48.43950,lng:2.61000,name:"Feuillage à contre-jour",                addr:"Forêt de Fontainebleau"},
+  {g:'D',n:10,lat:48.44200,lng:2.60780,name:"Texture libre — Au choix (JOKER)",       addr:"Village ou forêt"},
+  {g:'E',n:1, lat:48.44560,lng:2.60480,name:"Heurtoir ou poignée de porte ancienne",  addr:"Grande Rue / ruelles"},
+  {g:'E',n:2, lat:48.44500,lng:2.60580,name:"Numéro de maison peint ou gravé",        addr:"Grande Rue"},
+  {g:'E',n:3, lat:48.44440,lng:2.60660,name:"Fleur ou plante en pot — Fenêtre",       addr:"Grande Rue"},
+  {g:'E',n:4, lat:48.44380,lng:2.60750,name:"Inscription ou lettrage peint",          addr:"Galeries / commerces"},
+  {g:'E',n:5, lat:48.43800,lng:2.60700,name:"Insecte ou petit animal en forêt",       addr:"Forêt de Fontainebleau"},
+  {g:'E',n:6, lat:48.43930,lng:2.60950,name:"Champignon ou mousse sur rocher",        addr:"Forêt de Fontainebleau"},
+  {g:'E',n:7, lat:48.44621,lng:2.60263,name:"Détail d'une mosaïque murale (macro)",  addr:"Grande Rue (Auberge Ganne)"},
+  {g:'E',n:8, lat:48.44435,lng:2.60797,name:"Clef de voûte ou linteau sculpté",       addr:"Portails Grande Rue"},
+  {g:'E',n:9, lat:48.44150,lng:2.60830,name:"Toile d'araignée avec rosée",           addr:"Lisière forêt / jardins"},
+  {g:'E',n:10,lat:48.44300,lng:2.60900,name:"Détail surprenant — Au choix (JOKER)",   addr:"Village ou forêt"},
+  {g:'F',n:1, lat:48.44430,lng:2.60958,name:"Ancien & Moderne côte à côte",           addr:"Grande Rue"},
+  {g:'F',n:2, lat:48.44524,lng:2.60703,name:"Peinture vs Photographie",               addr:"Besharat Gallery / mosaïques"},
+  {g:'F',n:3, lat:48.44470,lng:2.60820,name:"Porte ouverte / Porte fermée",           addr:"Grande Rue / ruelles"},
+  {g:'F',n:4, lat:48.44250,lng:2.60700,name:"Ruine ou bâtiment à l'abandon",         addr:"Village ou lisière"},
+  {g:'F',n:5, lat:48.44550,lng:2.60500,name:"Jeune & Vieux — Contraste humain",       addr:"Village"},
+  {g:'F',n:6, lat:48.44000,lng:2.60820,name:"Ombre & Lumière — Fort contraste",       addr:"Forêt ou village"},
+  {g:'F',n:7, lat:48.43800,lng:2.60860,name:"Nature qui reprend ses droits",          addr:"Forêt de Fontainebleau"},
+  {g:'F',n:8, lat:48.44050,lng:2.61100,name:"Panneau circuit peintres + balisage",    addr:"Forêt de Fontainebleau"},
+  {g:'F',n:9, lat:48.43100,lng:2.59600,name:"Cimetière de Chailly-en-Bière",          addr:"Route de Chailly-en-Bière"},
+  {g:'F',n:10,lat:48.44350,lng:2.60960,name:"Contraste libre — Au choix (JOKER)",     addr:"Village ou forêt"}
+];
+
+// Rendre REPERES accessible globalement pour le formulaire élève
+window.MAP_REPERES = REPERES;
+
+var map=L.map('map',{zoomControl:true,scrollWheelZoom:false}).setView([48.4430,2.6070],15);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+  attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',maxZoom:19
+}).addTo(map);
+map.on('click',function(){map.scrollWheelZoom.enable();});
+map.on('mouseout',function(){map.scrollWheelZoom.disable();});
+
+function makeIcon(color,label,dimmed){
+  var op=dimmed?'0.18':'1';
+  var fs=String(label).length>1?'9':'11';
+  return L.divIcon({className:'',
+    html:'<div style="opacity:'+op+';background:'+color+';color:#fff;font-family:Josefin Sans,sans-serif;font-size:'+fs+'px;font-weight:700;width:30px;height:30px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:2px solid rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;box-shadow:0 2px 5px rgba(0,0,0,.3);"><span style="transform:rotate(45deg)">'+label+'</span></div>',
+    iconSize:[30,30],iconAnchor:[15,30],popupAnchor:[0,-32]});
+}
+function makeStartIcon(dimmed){
+  var op=dimmed?'0.18':'1';
+  return L.divIcon({className:'',
+    html:'<div style="opacity:'+op+';background:#c8843a;color:#fff;font-size:15px;width:36px;height:36px;border-radius:50%;border:3px solid #5c3d1e;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.4);">🏁</div>',
+    iconSize:[36,36],iconAnchor:[18,18],popupAnchor:[0,-20]});
+}
+
+var markers={};
+var mStart=L.marker([DEPART.lat,DEPART.lng],{icon:makeStartIcon(false)}).addTo(map)
+  .bindPopup('<div style="font-family:Josefin Sans,sans-serif;min-width:190px;"><div style="background:#c8843a;color:#fff;padding:8px 10px;margin:-10px -10px 8px;font-size:12px;font-weight:700;">🏁 '+DEPART.name+'</div><div style="font-size:11px;color:#8a8078;">📍 '+DEPART.addr+'</div><div style="font-size:11px;color:#2d4a2d;margin-top:6px;">Point commun à tous les groupes</div></div>',{maxWidth:260});
+markers['start']={marker:mStart,groupe:null};
+
+REPERES.forEach(function(r){
+  var c=GROUPE_COLORS[r.g];
+  var popup='<div style="font-family:Josefin Sans,sans-serif;min-width:200px;"><div style="background:'+c+';color:#fff;padding:8px 10px;margin:-10px -10px 8px;font-size:12px;font-weight:700;">Repère '+r.n+' — '+r.name+'</div><div style="font-size:11px;color:#8a8078;margin-bottom:5px;">📍 '+r.addr+'</div><div style="font-size:11px;color:'+c+';font-weight:700;">Groupe '+r.g+' · Photo 0'+r.n+'</div></div>';
+  var m=L.marker([r.lat,r.lng],{icon:makeIcon(c,r.n,false)}).addTo(map).bindPopup(popup,{maxWidth:260});
+  markers[r.g+'_'+r.n]={marker:m,groupe:r.g};
+});
+
+var routeVillage=L.polyline([[48.44590,2.60180],[48.44621,2.60263],[48.44580,2.60400],[48.44550,2.60487],[48.44500,2.60600],[48.44440,2.60700],[48.44400,2.60780],[48.44350,2.60900],[48.44312,2.61009]],{color:'#c8843a',weight:3,opacity:0.5,dashArray:'6 4'}).addTo(map);
+var routeForet=L.polyline([[48.44312,2.61009],[48.44150,2.60850],[48.43930,2.60950],[48.43855,2.60781],[48.43650,2.60900]],{color:'#1a5276',weight:3,opacity:0.5,dashArray:'6 4'}).addTo(map);
+
+window.filterMap=function(group,btn){
+  document.querySelectorAll('.map-filter-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  Object.entries(markers).forEach(function(e){
+    var key=e[0],obj=e[1];
+    var isStart=(obj.groupe===null);
+    var visible=(group==='all')||isStart||(obj.groupe===group);
+    var dimmed=!visible;
+    var r=REPERES.find(function(x){return (x.g+'_'+x.n)===key;});
+    if(isStart){obj.marker.setIcon(makeStartIcon(group!=='all'));}
+    else if(r){obj.marker.setIcon(makeIcon(GROUPE_COLORS[r.g],r.n,dimmed));}
+    if(dimmed){obj.marker.closePopup();obj.marker.setZIndexOffset(-500);}
+    else{obj.marker.setZIndexOffset(0);}
+  });
+  var forGroupes=['B','D','F'];
+  if(group==='all'){routeVillage.setStyle({opacity:0.5});routeForet.setStyle({opacity:0.5});}
+  else if(forGroupes.indexOf(group)!==-1){routeVillage.setStyle({opacity:0.08});routeForet.setStyle({opacity:0.65});}
+  else{routeVillage.setStyle({opacity:0.65});routeForet.setStyle({opacity:0.08});}
+  document.querySelectorAll('#mapLegend .legend-item').forEach(function(li){li.style.opacity=(group==='all')?'1':'0.2';});
+  if(group!=='all'){
+    document.querySelectorAll('#mapLegend .legend-item').forEach(function(li){
+      if(li.textContent.indexOf('Groupe '+group)!==-1||li.textContent.indexOf('Départ')!==-1){li.style.opacity='1';}
+    });
+  }
+  if(group==='all'){map.setView([48.4430,2.6070],15);}
+  else{
+    var pts=REPERES.filter(function(r){return r.g===group;});
+    if(pts.length){var b=pts.map(function(r){return [r.lat,r.lng];});b.push([DEPART.lat,DEPART.lng]);map.fitBounds(b,{padding:[40,40]});}
+  }
+};
+})();
+</script>
+
+
+<!-- GROUPES HEADER -->
+<div class="groups-header">
+  <h2>Fiches de Route par Groupe</h2>
+  <p>Chaque groupe suit son propre circuit thématique à travers Barbizon</p>
+</div>
+
+<!-- ══════════════════════════════════
+     GROUPE A — L'ÉCOLE DES PEINTRES
+══════════════════════════════════ -->
+<div class="groupe">
+  <div class="groupe-header">
+    <div class="groupe-num">A</div>
+    <div class="groupe-info">
+      <h3>L'École des Peintres</h3>
+      <div class="route-tag">Circuit patrimonial · Départ : Place Marc Jacquet</div>
+    </div>
+  </div>
+
+  <table class="photos-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Lieu & Sujet</th>
+        <th>Indice / Consigne</th>
+        <th>Pts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="photo-num">01</td>
+        <td>
+          <div class="photo-lieu">Auberge Ganne — Façade principale</div>
+          <div class="photo-desc">Musée des Peintres de Barbizon, 92 Grande Rue</div>
+        </td>
+        <td class="photo-indice">Cadrez la plaque "Musée" avec au moins un détail de la façade du XIXe s.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">02</td>
+        <td>
+          <div class="photo-lieu">Maison-atelier de Théodore Rousseau</div>
+          <div class="photo-desc">Demeure des 20 dernières années du peintre</div>
+        </td>
+        <td class="photo-indice">Cherchez la plaque commémorative sur la façade en pierre.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">03</td>
+        <td>
+          <div class="photo-lieu">Atelier Jean-François Millet</div>
+          <div class="photo-desc">Grande Rue — Studio où naquirent L'Angélus et Les Glaneuses</div>
+        </td>
+        <td class="photo-indice">Incluez la cour pavée ou la fenêtre d'atelier dans votre composition.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">04</td>
+        <td>
+          <div class="photo-lieu">Mosaïque murale — Grande Rue</div>
+          <div class="photo-desc">Une des 20 reproductions de tableaux célèbres installées en 2016</div>
+        </td>
+        <td class="photo-indice">Identifiez et photographiez une mosaïque reproduisant un tableau de l'École de Barbizon.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">05</td>
+        <td>
+          <div class="photo-lieu">Plaque commémorative d'artiste</div>
+          <div class="photo-desc">De nombreuses façades de la Grande Rue portent ces témoignages</div>
+        </td>
+        <td class="photo-indice">La plaque doit être lisible sur la photo. Bonus si l'artiste est identifiable.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">06</td>
+        <td>
+          <div class="photo-lieu">Grande Rue — Perspective urbaine</div>
+          <div class="photo-desc">L'axe principal du village, bordé de galeries et commerces traditionnels</div>
+        </td>
+        <td class="photo-indice">Capturez la fuite de la rue avec galeries et façades à l'heure dorée.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">07</td>
+        <td>
+          <div class="photo-lieu">Galerie d'art — Vitrine</div>
+          <div class="photo-desc">Barbizon compte plusieurs galeries contemporaines et de peinture classique</div>
+        </td>
+        <td class="photo-indice">La composition doit jouer sur le reflet ou la profondeur à travers la vitrine.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">08</td>
+        <td>
+          <div class="photo-lieu">Hôtel Le Bas Bréau</div>
+          <div class="photo-desc">Ancienne Villa des Artistes, fondée en 1867 par Emmanuel Siron</div>
+        </td>
+        <td class="photo-indice">Cherchez un détail architectural ou l'entrée emblématique de l'établissement.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">09</td>
+        <td>
+          <div class="photo-lieu">Office de Tourisme — Place Marc Jacquet</div>
+          <div class="photo-desc">Point de départ et d'arrivée du circuit officiel des peintres</div>
+        </td>
+        <td class="photo-indice">Photo de groupe devant l'entrée avec au moins 2 membres de l'équipe visibles.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">10</td>
+        <td>
+          <div class="photo-lieu">Détail architectural insolite <span class="bonus-tag">JOKER</span></div>
+          <div class="photo-desc">Au choix de l'équipe dans le village (heurtoir, linteau sculpté, vieille enseigne…)</div>
+        </td>
+        <td class="photo-indice">Montrez votre œil de photographe ! Plus c'est original, plus le jury sera indulgent.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="groupe-total">
+    <span class="total-label">Score max possible</span>
+    <span class="total-pts">100 pts</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     GROUPE B — AU CŒUR DE LA FORÊT
+══════════════════════════════════ -->
+<div class="groupe">
+  <div class="groupe-header">
+    <div class="groupe-num">B</div>
+    <div class="groupe-info">
+      <h3>Au Cœur de la Forêt</h3>
+      <div class="route-tag">Circuit naturel · Départ : Lisière de Barbizon (entrée forêt)</div>
+    </div>
+  </div>
+
+  <table class="photos-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Lieu & Sujet</th>
+        <th>Indice / Consigne</th>
+        <th>Pts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="photo-num">01</td>
+        <td>
+          <div class="photo-lieu">Panneau d'entrée de forêt</div>
+          <div class="photo-desc">Signalétique à la sortie du village, côté Fontainebleau</div>
+        </td>
+        <td class="photo-indice">Le panneau doit être net ; jouez sur la profondeur avec les arbres en fond.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">02</td>
+        <td>
+          <div class="photo-lieu">Rocher de l'Éléphant</div>
+          <div class="photo-desc">Formation de grès sculptée par l'érosion — silhouette reconnaissable</div>
+        </td>
+        <td class="photo-indice">Trouvez l'angle où la silhouette animale est la plus évidente. Bonus si un membre de l'équipe pose à son pied.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">03</td>
+        <td>
+          <div class="photo-lieu">Médaillon Millet-Rousseau</div>
+          <div class="photo-desc">Bas-relief sculpté dans la roche en 1884, hommage aux deux maîtres</div>
+        </td>
+        <td class="photo-indice">Capturez le médaillon avec son contexte rocheux. La lumière tamisée sous les arbres ajoute de l'atmosphère.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">04</td>
+        <td>
+          <div class="photo-lieu">Stèle de la Première Réserve Artistique (1861)</div>
+          <div class="photo-desc">Première zone protégée à des fins picturales au monde</div>
+        </td>
+        <td class="photo-indice">La stèle doit être lisible. Photographiez le texte gravé en gros plan optionnel.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">05</td>
+        <td>
+          <div class="photo-lieu">Chaos d'Apremont — Rochers de grès</div>
+          <div class="photo-desc">Blocs pouvant atteindre 10 m de haut, aux formes tourmentées</div>
+        </td>
+        <td class="photo-indice">Jouez sur les contrastes entre roche et végétation. Cherchez une forme évoquant un animal ou un visage.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">06</td>
+        <td>
+          <div class="photo-lieu">Chêne Sully (ou Chêne Charlemagne)</div>
+          <div class="photo-desc">Vieux chênes centenaires de la forêt, témoins de l'époque des peintres</div>
+        </td>
+        <td class="photo-indice">Cherchez le balisage jaune du circuit des peintres à proximité. Cadrez l'arbre en contre-plongée.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">07</td>
+        <td>
+          <div class="photo-lieu">Balisage jaune du circuit des peintres</div>
+          <div class="photo-desc">Trait de peinture jaune sur les rochers, créé par l'Office de Tourisme</div>
+        </td>
+        <td class="photo-indice">La marque jaune doit être clairement visible. Composez avec le chemin qui s'ouvre devant.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">08</td>
+        <td>
+          <div class="photo-lieu">Lumière en sous-bois</div>
+          <div class="photo-desc">Un rayon de soleil filtrant à travers le feuillage</div>
+        </td>
+        <td class="photo-indice">Photo technique : cherchez un contrejour ou un rai de lumière spectaculaire. Pas de flash autorisé.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">09</td>
+        <td>
+          <div class="photo-lieu">Tableau de J.B.C. Corot (chevalet)</div>
+          <div class="photo-desc">Reproduction d'une peinture de Corot installée sur un chevalet en forêt</div>
+        </td>
+        <td class="photo-indice">Photographiez le tableau avec le paysage réel qui l'a inspiré en arrière-plan si possible.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">10</td>
+        <td>
+          <div class="photo-lieu">Paysage de forêt — Vue libre <span class="bonus-tag">JOKER</span></div>
+          <div class="photo-desc">N'importe quel coin de forêt qui vous a frappé par sa beauté</div>
+        </td>
+        <td class="photo-indice">Imaginez que vous êtes un peintre de l'École de Barbizon. Quel motif choisissez-vous ?</td>
+        <td class="photo-pts">10</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="groupe-total">
+    <span class="total-label">Score max possible</span>
+    <span class="total-pts">100 pts</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     GROUPE C — VIE DE VILLAGE
+══════════════════════════════════ -->
+<div class="groupe">
+  <div class="groupe-header">
+    <div class="groupe-num">C</div>
+    <div class="groupe-info">
+      <h3>Vie de Village</h3>
+      <div class="route-tag">Circuit humain & quotidien · Départ : Boulangerie de la Grande Rue</div>
+    </div>
+  </div>
+
+  <table class="photos-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Lieu & Sujet</th>
+        <th>Indice / Consigne</th>
+        <th>Pts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="photo-num">01</td>
+        <td>
+          <div class="photo-lieu">Boulangerie ou commerce traditionnel</div>
+          <div class="photo-desc">Les commerces indépendants qui perpétuent l'âme du village</div>
+        </td>
+        <td class="photo-indice">Capturez la devanture avec son enseigne. Un client ou le boulanger en arrière-plan : +5 pts.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">02</td>
+        <td>
+          <div class="photo-lieu">L'Esquisse — Café culturel</div>
+          <div class="photo-desc">Espace hybride café / hôtel / musée gratuit, en face de l'Auberge Ganne</div>
+        </td>
+        <td class="photo-indice">Photographiez l'entrée ou la terrasse. Cherchez un détail artistique visible depuis l'extérieur.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">03</td>
+        <td>
+          <div class="photo-lieu">Église Notre-Dame de la Persévérance</div>
+          <div class="photo-desc">Édifice religieux du village, repère architectural</div>
+        </td>
+        <td class="photo-indice">Photographiez le clocher ou le portail. Essayez une perspective avec les arbres de la rue.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">04</td>
+        <td>
+          <div class="photo-lieu">Mairie de Barbizon</div>
+          <div class="photo-desc">Construite après la séparation d'avec Chailly-en-Bière en 1903</div>
+        </td>
+        <td class="photo-indice">Le drapeau français doit être visible. Photo avec les trois couleurs bien présentes.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">05</td>
+        <td>
+          <div class="photo-lieu">La Folie Barbizon — Restaurant artistique</div>
+          <div class="photo-desc">Résidence artistique et restaurant locavore dans un cadre chargé d'histoire</div>
+        </td>
+        <td class="photo-indice">Cherchez une œuvre d'art visible depuis la rue ou l'entrée de l'établissement.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">06</td>
+        <td>
+          <div class="photo-lieu">Besharat Gallery — Villa Les Charmettes</div>
+          <div class="photo-desc">Galerie internationale dans une villa du XIXe s., avec jardin de sculptures</div>
+        </td>
+        <td class="photo-indice">Photographiez une sculpture du jardin avec la végétation. Interaction art-nature requise.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">07</td>
+        <td>
+          <div class="photo-lieu">Fontaine ou point d'eau du village</div>
+          <div class="photo-desc">Élément de mobilier urbain typique des villages d'Île-de-France</div>
+        </td>
+        <td class="photo-indice">Cherchez le reflet ou le mouvement de l'eau si possible. Photo en longue exposition bienvenue.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">08</td>
+        <td>
+          <div class="photo-lieu">Mur de pierre ou portail ancien</div>
+          <div class="photo-desc">Barbizon a conservé de nombreuses demeures en pierre typiques de la Brie</div>
+        </td>
+        <td class="photo-indice">Cherchez un mur avec mousse, vigne vierge ou lierre — la texture est le sujet.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">09</td>
+        <td>
+          <div class="photo-lieu">Panneau d'entrée du village</div>
+          <div class="photo-desc">La signalétique "Barbizon — Village des Peintres"</div>
+        </td>
+        <td class="photo-indice">Toute l'équipe en selfie devant le panneau. La feuille de route doit être visible sur la photo.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">10</td>
+        <td>
+          <div class="photo-lieu">Portrait d'habitant ou de passant <span class="bonus-tag">JOKER</span></div>
+          <div class="photo-desc">Avec son accord, photographiez un habitant dans son environnement</div>
+        </td>
+        <td class="photo-indice">Le consentement de la personne photographiée est obligatoire. Bonus si elle vous raconte une anecdote sur Barbizon.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="groupe-total">
+    <span class="total-label">Score max possible</span>
+    <span class="total-pts">100 pts</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     GROUPE D — LUMIÈRES & TEXTURES
+══════════════════════════════════ -->
+<div class="groupe">
+  <div class="groupe-header">
+    <div class="groupe-num">D</div>
+    <div class="groupe-info">
+      <h3>Lumières & Textures</h3>
+      <div class="route-tag">Circuit photographique · Départ : Entrée de la forêt, Grande Rue</div>
+    </div>
+  </div>
+
+  <table class="photos-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Lieu & Sujet</th>
+        <th>Indice / Consigne</th>
+        <th>Pts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="photo-num">01</td>
+        <td>
+          <div class="photo-lieu">Rayon de lumière en sous-bois</div>
+          <div class="photo-desc">Forêt de Fontainebleau, lisière de Barbizon</div>
+        </td>
+        <td class="photo-indice">Cherchez un contrejour naturel entre les troncs. Aucun flash autorisé.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">02</td>
+        <td>
+          <div class="photo-lieu">Texture de rocher de grès</div>
+          <div class="photo-desc">Les grès de Fontainebleau offrent des surfaces uniques</div>
+        </td>
+        <td class="photo-indice">Macro ou très gros plan : faites disparaître l'échelle, que la texture soit le seul sujet.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">03</td>
+        <td>
+          <div class="photo-lieu">Reflet dans une surface brillante</div>
+          <div class="photo-desc">Flaque, vitrine, carrosserie, fontaine… à vous de trouver</div>
+        </td>
+        <td class="photo-indice">Le reflet doit reconnaître un lieu emblématique de Barbizon.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">04</td>
+        <td>
+          <div class="photo-lieu">Ombre portée géométrique</div>
+          <div class="photo-desc">Grille, volet, treillage, branche — cherchez la forme au sol</div>
+        </td>
+        <td class="photo-indice">L'ombre doit occuper au moins 50 % du cadre. Composition rigoureuse exigée.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">05</td>
+        <td>
+          <div class="photo-lieu">Écorce d'arbre centenaire</div>
+          <div class="photo-desc">Chênes, charmes et pins de la forêt de Fontainebleau</div>
+        </td>
+        <td class="photo-indice">Cherchez le plus vieux tronc possible. La mousse ou le lichen est un plus.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">06</td>
+        <td>
+          <div class="photo-lieu">Pierre ancienne — Façade de la Grande Rue</div>
+          <div class="photo-desc">Les maisons du XIXe s. offrent des textures remarquables</div>
+        </td>
+        <td class="photo-indice">Photographiez un assemblage de pierres taillées avec joints visibles et patine du temps.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">07</td>
+        <td>
+          <div class="photo-lieu">Couleur dominante — Monochrome naturel</div>
+          <div class="photo-desc">Un cadre entièrement dominé par une seule teinte (vert, ocre, gris…)</div>
+        </td>
+        <td class="photo-indice">Village ou forêt au choix. Pas de filtre numérique : la couleur doit exister en réel.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">08</td>
+        <td>
+          <div class="photo-lieu">Pavé ou sol ancien</div>
+          <div class="photo-desc">Les cours et ruelles de Barbizon conservent des sols d'époque</div>
+        </td>
+        <td class="photo-indice">Photo au ras du sol. La perspective doit donner une impression de profondeur.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">09</td>
+        <td>
+          <div class="photo-lieu">Feuillage à contre-jour</div>
+          <div class="photo-desc">Feuilles translucides éclairées par le soleil dans la forêt</div>
+        </td>
+        <td class="photo-indice">Visez vers le ciel à travers la canopée. L'exposition doit conserver le détail des nervures.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">10</td>
+        <td>
+          <div class="photo-lieu">Texture libre — Au choix <span class="bonus-tag">JOKER</span></div>
+          <div class="photo-desc">N'importe quelle texture ou jeu de lumière qui vous a arrêté net</div>
+        </td>
+        <td class="photo-indice">Justifiez votre choix en une phrase au dos de la fiche. Le jury adorera la surprise.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="groupe-total">
+    <span class="total-label">Score max possible</span>
+    <span class="total-pts">100 pts</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     GROUPE E — DÉTAILS & MINIATURES
+══════════════════════════════════ -->
+<div class="groupe">
+  <div class="groupe-header">
+    <div class="groupe-num">E</div>
+    <div class="groupe-info">
+      <h3>Détails & Miniatures</h3>
+      <div class="route-tag">Circuit macro & observation · Départ : Auberge Ganne, 92 Grande Rue</div>
+    </div>
+  </div>
+
+  <table class="photos-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Lieu & Sujet</th>
+        <th>Indice / Consigne</th>
+        <th>Pts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="photo-num">01</td>
+        <td>
+          <div class="photo-lieu">Heurtoir ou poignée de porte ancienne</div>
+          <div class="photo-desc">Grande Rue et ruelles adjacentes</div>
+        </td>
+        <td class="photo-indice">Gros plan serré — le métal doit révéler son usure et son histoire.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">02</td>
+        <td>
+          <div class="photo-lieu">Numéro de maison peint ou gravé</div>
+          <div class="photo-desc">Les adresses historiques de la Grande Rue</div>
+        </td>
+        <td class="photo-indice">Le numéro doit être lisible. Cherchez le plus original (faïence, fonte, bois sculpté…).</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">03</td>
+        <td>
+          <div class="photo-lieu">Fleur ou plante en pot — Fenêtre ou seuil</div>
+          <div class="photo-desc">Les habitants ornent leurs façades de végétaux tout au long de la rue</div>
+        </td>
+        <td class="photo-indice">Cadrez fleur ET façade pour contextualiser. Profondeur de champ réduite si possible.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">04</td>
+        <td>
+          <div class="photo-lieu">Inscription ou lettrage peint à la main</div>
+          <div class="photo-desc">Enseignes artisanales, noms de galeries, vieilles réclames</div>
+        </td>
+        <td class="photo-indice">Cherchez une typographie ancienne ou originale. L'ensemble du lettrage doit être dans le cadre.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">05</td>
+        <td>
+          <div class="photo-lieu">Insecte ou petit animal en forêt</div>
+          <div class="photo-desc">La forêt de Fontainebleau abrite une faune variée</div>
+        </td>
+        <td class="photo-indice">L'animal doit être net et identifiable. Patience et discrétion requises !</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">06</td>
+        <td>
+          <div class="photo-lieu">Champignon ou mousse sur rocher</div>
+          <div class="photo-desc">À chercher au pied des grès et des chênes en forêt</div>
+        </td>
+        <td class="photo-indice">Cadrez au niveau du sol. La mise au point doit être parfaite sur le champignon.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">07</td>
+        <td>
+          <div class="photo-lieu">Détail d'une mosaïque murale</div>
+          <div class="photo-desc">Les 20 mosaïques du village reproduisent des œuvres célèbres</div>
+        </td>
+        <td class="photo-indice">Extreme close-up sur un visage, une main ou un objet de la mosaïque — rendez-le abstrait.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">08</td>
+        <td>
+          <div class="photo-lieu">Clef de voûte ou linteau sculpté</div>
+          <div class="photo-desc">Architecture intérieure des portails et passages couverts</div>
+        </td>
+        <td class="photo-indice">Levez les yeux ! La sculpture doit être le seul sujet net de la photo.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">09</td>
+        <td>
+          <div class="photo-lieu">Toile d'araignée avec rosée</div>
+          <div class="photo-desc">Tôt le matin en lisière de forêt ou dans un jardin</div>
+        </td>
+        <td class="photo-indice">Le fond doit être sombre ou flou pour faire ressortir la structure de la toile.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">10</td>
+        <td>
+          <div class="photo-lieu">Détail surprenant — Au choix <span class="bonus-tag">JOKER</span></div>
+          <div class="photo-desc">Un petit rien que personne d'autre n'aura photographié aujourd'hui</div>
+        </td>
+        <td class="photo-indice">Montrez l'infime. Le jury cherche ce que l'œil pressé ne voit jamais.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="groupe-total">
+    <span class="total-label">Score max possible</span>
+    <span class="total-pts">100 pts</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════
+     GROUPE F — CONTRASTES & TEMPS
+══════════════════════════════════ -->
+<div class="groupe">
+  <div class="groupe-header">
+    <div class="groupe-num">F</div>
+    <div class="groupe-info">
+      <h3>Contrastes & Temps qui passe</h3>
+      <div class="route-tag">Circuit conceptuel · Départ : Panneau d'entrée du village</div>
+    </div>
+  </div>
+
+  <table class="photos-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Lieu & Sujet</th>
+        <th>Indice / Consigne</span></th>
+        <th>Pts</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="photo-num">01</td>
+        <td>
+          <div class="photo-lieu">Ancien & Moderne côte à côte</div>
+          <div class="photo-desc">Un bâtiment historique avec un élément contemporain visible</div>
+        </td>
+        <td class="photo-indice">Ex : façade XIXe + panneau solaire, voiture moderne, smartphone d'un passant…</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">02</td>
+        <td>
+          <div class="photo-lieu">Peinture vs Photographie</div>
+          <div class="photo-desc">Une reproduction de tableau (mosaïque, affiche, galerie) photographiée devant son paysage réel</div>
+        </td>
+        <td class="photo-indice">Le tableau et le paysage qui l'a inspiré doivent coexister dans le même cadre.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">03</td>
+        <td>
+          <div class="photo-lieu">Porte ouverte / Porte fermée</div>
+          <div class="photo-desc">Deux photos en diptyque — une porte ou portail dans chaque état</div>
+        </td>
+        <td class="photo-indice">Deux photos du même lieu, même cadrage, l'une ouverte, l'autre fermée. Présentez-les ensemble.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">04</td>
+        <td>
+          <div class="photo-lieu">Ruine ou bâtiment à l'abandon</div>
+          <div class="photo-desc">Un vestige du passé encore visible dans le village ou en lisière</div>
+        </td>
+        <td class="photo-indice">La végétation qui envahit la pierre est un sujet idéal. Cherchez la poésie du délabrement.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">05</td>
+        <td>
+          <div class="photo-lieu">Jeune & Vieux — Contraste humain</div>
+          <div class="photo-desc">Deux générations côte à côte (avec leur accord)</div>
+        </td>
+        <td class="photo-indice">Portrait de groupe spontané. La complicité entre les personnes doit transparaître.</td>
+        <td class="photo-pts pts-bonus">10 <span class="bonus-tag">+5 bonus</span></td>
+      </tr>
+      <tr>
+        <td class="photo-num">06</td>
+        <td>
+          <div class="photo-lieu">Ombre & Lumière — Fort contraste</div>
+          <div class="photo-desc">Un sujet à moitié dans l'ombre, à moitié dans la lumière</div>
+        </td>
+        <td class="photo-indice">La ligne de démarcation lumière/ombre doit être nette et dramatique. Exposez sur les hautes lumières.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">07</td>
+        <td>
+          <div class="photo-lieu">Nature qui reprend ses droits</div>
+          <div class="photo-desc">Plante poussant dans un mur, racine soulevant un pavé, mousse sur un toit…</div>
+        </td>
+        <td class="photo-indice">La nature doit sembler gagner sur le minéral ou le construit. Cadrez serré sur le point de contact.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">08</td>
+        <td>
+          <div class="photo-lieu">Panneau du circuit des peintres en forêt</div>
+          <div class="photo-desc">Les 11 stations commentées du circuit balisé jaune</div>
+        </td>
+        <td class="photo-indice">Photographiez le panneau avec le balisage jaune visible sur un rocher à proximité.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">09</td>
+        <td>
+          <div class="photo-lieu">Cimetière de Chailly-en-Bière (vue depuis la route)</div>
+          <div class="photo-desc">Lieu de repos de Millet et Rousseau, enterrés côte à côte</div>
+        </td>
+        <td class="photo-indice">Vue de l'entrée ou du mur extérieur suffisante. Pas d'intrusion dans l'enceinte requise.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+      <tr>
+        <td class="photo-num">10</td>
+        <td>
+          <div class="photo-lieu">Contraste libre — Au choix <span class="bonus-tag">JOKER</span></div>
+          <div class="photo-desc">Tout contraste qui raconte une histoire en un seul cadre</div>
+        </td>
+        <td class="photo-indice">Grand/petit, vif/terne, bruyant/silencieux… Le jury récompense la narration visuelle.</td>
+        <td class="photo-pts">10</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="groupe-total">
+    <span class="total-label">Score max possible</span>
+    <span class="total-pts">100 pts</span>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Rallye Photo Barbizon</strong> &nbsp;·&nbsp; Remise des appareils à l'arrivée à l'Office de Tourisme &nbsp;·&nbsp; Jury composé de 3 photographes &nbsp;·&nbsp; Résultats annoncés 30 min après la clôture<br>
+  <br>
+  Bonne chance à toutes les équipes — et que le meilleur œil gagne ! 📷
+</footer>
+
+</div><!-- /tab-participants -->
+
+
+<!-- ══════════════════════════════════
+     ONGLET ÉLÈVES — DÉPÔT PHOTOS
+══════════════════════════════════ -->
+<div id="tab-eleves" class="tab-pane">
+
+  <div class="cover" style="padding:30px 36px 26px;">
+    <div class="cover-badge">Espace Élèves</div>
+    <h1 style="font-size:32px;">Déposer <em>vos photos</em></h1>
+    <p style="font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:2px;opacity:.7;margin-top:6px;">Sélectionnez votre groupe, la photo demandée, puis envoyez votre cliché</p>
+  </div>
+
+  <div style="padding:28px 24px;background:var(--blanc);max-width:600px;margin:0 auto;">
+
+    <!-- Formulaire dépôt -->
+    <div id="uploadForm" style="background:var(--creme);padding:24px;border-left:3px solid var(--ocre);">
+      <div style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--vert-clair);margin-bottom:20px;">Nouveau dépôt</div>
+
+      <div class="form-group">
+        <label class="form-label">Votre groupe</label>
+        <select id="elv-groupe" class="form-select" onchange="updatePhotoSelect()">
+          <option value="">— Choisir un groupe —</option>
+          <option value="A">Groupe A — L'École des Peintres</option>
+          <option value="B">Groupe B — Au Cœur de la Forêt</option>
+          <option value="C">Groupe C — Vie de Village</option>
+          <option value="D">Groupe D — Lumières &amp; Textures</option>
+          <option value="E">Groupe E — Détails &amp; Miniatures</option>
+          <option value="F">Groupe F — Contrastes &amp; Temps</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Lieu à photographier <span style="font-family:'Josefin Sans',sans-serif;font-size:10px;color:var(--gris);text-transform:none;letter-spacing:0;">— repère n° sur la carte</span></label>
+        <select id="elv-photo" class="form-select" onchange="onPhotoSelect()">
+          <option value="">— Sélectionnez d'abord un groupe —</option>
+        </select>
+      </div>
+
+      <!-- Consigne + info lieu -->
+      <div id="elv-consigne-box" style="display:none;background:var(--blanc);border-left:3px solid var(--vert);padding:12px 14px;margin-bottom:16px;">
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:6px;">
+          <div>
+            <div style="font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:2px;color:var(--ocre);text-transform:uppercase;margin-bottom:2px;">Repère</div>
+            <div id="elv-lieu-badge" style="font-family:'Playfair Display',serif;font-size:20px;color:var(--vert);font-weight:700;"></div>
+          </div>
+          <div style="flex:1;min-width:120px;">
+            <div style="font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:2px;color:var(--vert-clair);text-transform:uppercase;margin-bottom:2px;">Lieu</div>
+            <div id="elv-lieu-name" style="font-size:13px;color:var(--brun);font-weight:700;line-height:1.3;"></div>
+            <div id="elv-lieu-addr" style="font-family:'Josefin Sans',sans-serif;font-size:11px;color:var(--gris);margin-top:2px;"></div>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(92,61,30,.1);padding-top:8px;">
+          <div style="font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:2px;color:var(--vert-clair);text-transform:uppercase;margin-bottom:4px;">Consigne</div>
+          <div id="elv-consigne-text" style="font-size:13px;color:var(--brun);line-height:1.5;font-style:italic;"></div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Votre photo <span style="color:var(--ocre)">*</span></label>
+        <div id="dropzone" onclick="document.getElementById('elv-file').click()" ondrop="handleDrop(event)" ondragover="event.preventDefault()" ondragleave="dropLeave(event)" ondragenter="dropEnter(event)">
+          <div id="dropzone-content">
+            <div style="font-size:40px;margin-bottom:8px;">📷</div>
+            <div style="font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:1px;color:var(--gris);">Cliquez ou glissez votre photo ici</div>
+            <div style="font-family:'Josefin Sans',sans-serif;font-size:10px;color:var(--gris);margin-top:4px;">JPG, PNG, HEIC — max 10 Mo</div>
+          </div>
+          <img id="elv-preview" style="display:none;max-width:100%;max-height:220px;margin-top:12px;border-radius:2px;" alt="Aperçu"/>
+        </div>
+        <input type="file" id="elv-file" accept="image/*" capture="environment" style="display:none;" onchange="handleFileSelect(event)"/>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Commentaire (optionnel)</label>
+        <textarea id="elv-comment" class="form-select" rows="2" placeholder="Décrivez votre approche, l'angle choisi…" style="resize:vertical;"></textarea>
+      </div>
+
+      <button id="elv-submit-btn" class="upload-btn" onclick="submitPhoto()">
+        <span id="elv-btn-text">📤 Envoyer la photo</span>
+        <span id="elv-btn-loader" style="display:none;">⏳ Envoi en cours…</span>
+      </button>
+
+      <div id="elv-progress-wrap" style="display:none;margin-top:12px;">
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:11px;color:var(--gris);margin-bottom:4px;">Upload : <span id="elv-progress-pct">0</span>%</div>
+        <div style="background:#e0d8cc;height:6px;border-radius:3px;">
+          <div id="elv-progress-bar" style="background:var(--vert);height:6px;border-radius:3px;width:0%;transition:width .3s;"></div>
+        </div>
+      </div>
+
+      <div id="elv-success" style="display:none;background:#e8f5e9;border-left:3px solid var(--vert-clair);padding:14px;margin-top:14px;">
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:13px;color:var(--vert);">✅ Photo envoyée avec succès ! Elle sera visible après validation par l'enseignant.</div>
+      </div>
+      <div id="elv-error" style="display:none;background:#fdecea;border-left:3px solid #b03a2e;padding:14px;margin-top:14px;">
+        <div id="elv-error-text" style="font-family:'Josefin Sans',sans-serif;font-size:13px;color:#b03a2e;"></div>
+      </div>
+    </div>
+
+    <!-- Photos déjà déposées par ce groupe -->
+    <div style="margin-top:28px;">
+      <div style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--vert-clair);margin-bottom:14px;">Photos déposées par votre groupe</div>
+      <div id="elv-deposees" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;">
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:12px;color:var(--gris);grid-column:1/-1;">Sélectionnez un groupe pour voir ses dépôts.</div>
+      </div>
+    </div>
+
+  </div>
+</div><!-- /tab-eleves -->
+
+<!-- ══════════════════════════════════
+     ONGLET CLASSEMENT PUBLIC
+══════════════════════════════════ -->
+<div id="tab-classement" class="tab-pane">
+
+  <div class="cover" style="padding:30px 36px 26px;">
+    <div class="cover-badge">Classement Live</div>
+    <h1 style="font-size:32px;"><em>Résultats</em> en direct</h1>
+    <p style="font-family:'Josefin Sans',sans-serif;font-size:12px;letter-spacing:2px;opacity:.7;margin-top:6px;">Mis à jour en temps réel · Photos validées uniquement</p>
+  </div>
+
+  <div style="background:var(--blanc);padding:28px 24px;">
+
+    <!-- Podium public -->
+    <div class="classement-title">Podium</div>
+    <div class="podium-grid" id="pub-podiumGrid" style="margin-bottom:28px;">
+      <div class="podium-card p1"><div class="podium-medal">🥇</div><div class="podium-groupe">—</div><div class="podium-score">0 <span>pts</span></div></div>
+      <div class="podium-card p2"><div class="podium-medal">🥈</div><div class="podium-groupe">—</div><div class="podium-score">0 <span>pts</span></div></div>
+      <div class="podium-card p3"><div class="podium-medal">🥉</div><div class="podium-groupe">—</div><div class="podium-score">0 <span>pts</span></div></div>
+    </div>
+
+    <!-- Tableau complet public -->
+    <div class="classement-title">Classement complet</div>
+    <table class="ranking-table">
+      <thead>
+        <tr>
+          <th>#</th><th>Groupe</th><th>Photos ✓</th><th>Score</th><th>Arrivée</th><th></th>
+        </tr>
+      </thead>
+      <tbody id="pub-rankingBody">
+        <tr><td colspan="6" style="text-align:center;color:var(--gris);font-family:'Josefin Sans',sans-serif;font-size:12px;padding:20px;">Chargement…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Galerie des photos validées -->
+  <div style="background:var(--creme);padding:28px 24px;">
+    <div class="classement-title">Galerie des photos validées</div>
+    <div id="pub-galerie" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:10px;">
+      <div style="font-family:'Josefin Sans',sans-serif;font-size:12px;color:var(--gris);grid-column:1/-1;">Aucune photo validée pour l'instant.</div>
+    </div>
+  </div>
+</div><!-- /tab-classement -->
+
+
+<!-- ══════════════════════════════════
+     ONGLET NOTATION ENSEIGNANT (Firebase)
+══════════════════════════════════ -->
+<div id="tab-notation" class="tab-pane">
+
+  <!-- LOCK SCREEN -->
+  <div class="lock-screen" id="lockScreen">
+    <div class="lock-icon">🔒</div>
+    <div class="lock-title">Espace Enseignant</div>
+    <div class="lock-sub">Code d'accès requis</div>
+    <div class="lock-input-wrap">
+      <input class="lock-input" type="password" id="lockInput" maxlength="4" placeholder="····"/>
+      <button class="lock-btn" onclick="checkCode()">Accéder →</button>
+    </div>
+    <div class="lock-error" id="lockError">Code incorrect. Réessayez.</div>
+  </div>
+
+  <!-- CONTENU ENSEIGNANT -->
+  <div class="notation-wrap" id="notationWrap">
+
+    <div class="notation-header">
+      <button class="logout-btn" onclick="logout()">🔒 Verrouiller</button>
+      <h2>Tableau Enseignant</h2>
+      <p>Validation des photos · Classement automatique · Export PDF</p>
+    </div>
+
+    <!-- CLASSEMENT ENSEIGNANT -->
+    <div class="classement-section">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;">
+        <div class="classement-title" style="margin-bottom:0;">Classement temps réel</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="save-btn" onclick="exportAllPDF()" style="margin-top:0;">📄 Export PDF global</button>
+          <button class="save-btn" onclick="downloadReadme()" style="margin-top:0;background:var(--brun);">📋 Télécharger README</button>
+        </div>
+      </div>
+
+      <div class="podium-grid" id="podiumGrid"></div>
+
+      <table class="ranking-table">
+        <thead>
+          <tr>
+            <th>#</th><th>Groupe</th><th>Photos ✓</th><th>Bonus</th><th>Pénalité</th><th>Score</th><th>Arrivée</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="rankingBody"></tbody>
+      </table>
+    </div>
+
+    <!-- PHOTOS EN ATTENTE DE VALIDATION -->
+    <div style="background:var(--blanc);padding:24px 36px;border-bottom:3px solid var(--ocre);">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <div class="classement-title" style="margin-bottom:0;">Photos en attente <span id="pending-count" style="background:var(--ocre);color:var(--blanc);font-size:11px;padding:2px 8px;border-radius:10px;margin-left:6px;">0</span></div>
+        <select id="filter-groupe" class="form-select" style="width:auto;padding:6px 12px;" onchange="filterPhotos()">
+          <option value="">Tous les groupes</option>
+          <option value="A">Groupe A</option><option value="B">Groupe B</option>
+          <option value="C">Groupe C</option><option value="D">Groupe D</option>
+          <option value="E">Groupe E</option><option value="F">Groupe F</option>
+        </select>
+      </div>
+      <div id="photos-pending" style="display:grid;gap:14px;">
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:12px;color:var(--gris);">Chargement des photos…</div>
+      </div>
+    </div>
+
+    <!-- GRILLE NOTATION PAR GROUPE -->
+    <div style="background:var(--creme);padding:24px 36px 8px;">
+      <div class="classement-title">Notation manuelle par groupe</div>
+    </div>
+    <div id="notationGroupes"></div>
+
+  </div>
+</div><!-- /tab-notation -->
+
+
+<!-- ══════════════════════════════════
+     STYLES SUPPLÉMENTAIRES
+══════════════════════════════════ -->
+<style>
+/* ── FORMULAIRE ÉLÈVES ── */
+.form-group { margin-bottom: 16px; }
+.form-label {
+  display: block;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--vert);
+  margin-bottom: 6px;
+}
+.form-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid rgba(92,61,30,.2);
+  background: var(--blanc);
+  font-family: 'Libre Baskerville', serif;
+  font-size: 14px;
+  color: var(--brun);
+  outline: none;
+  transition: border-color .2s;
+}
+.form-select:focus { border-color: var(--ocre); }
+#dropzone {
+  border: 2px dashed var(--ocre);
+  background: var(--blanc);
+  padding: 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: background .2s, border-color .2s;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#dropzone.drag-over { background: rgba(200,132,58,.08); border-color: var(--vert); }
+.upload-btn {
+  width: 100%;
+  background: var(--vert);
+  color: var(--blanc);
+  border: none;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 14px;
+  cursor: pointer;
+  transition: background .2s;
+  margin-top: 4px;
+}
+.upload-btn:hover { background: var(--vert-clair); }
+.upload-btn:disabled { background: var(--gris); cursor: not-allowed; }
+
+/* ── CARDS PHOTOS ── */
+.photo-card {
+  background: var(--blanc);
+  border: 1px solid rgba(92,61,30,.1);
+  overflow: hidden;
+  transition: box-shadow .2s;
+}
+.photo-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.1); }
+.photo-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+.photo-card .photo-card-body { padding: 10px 12px; }
+.photo-card .photo-card-groupe {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ocre);
+  margin-bottom: 2px;
+}
+.photo-card .photo-card-label {
+  font-size: 12px;
+  color: var(--brun);
+  line-height: 1.3;
+  margin-bottom: 6px;
+}
+.photo-card .photo-card-meta {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  color: var(--gris);
+}
+.status-badge {
+  display: inline-block;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+.status-pending  { background: #fff3cd; color: #856404; }
+.status-valide   { background: #d1e7dd; color: #0f5132; }
+.status-refuse   { background: #f8d7da; color: #842029; }
+
+/* ── VALIDATION CARD ── */
+.validation-card {
+  background: var(--blanc);
+  border: 1px solid rgba(92,61,30,.12);
+  border-left: 4px solid var(--ocre);
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 0;
+  overflow: hidden;
+}
+.validation-card.valide { border-left-color: var(--vert-clair); }
+.validation-card.refuse { border-left-color: #b03a2e; }
+.validation-card img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+.validation-card .vc-body { padding: 14px 16px; }
+.vc-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; align-items: center; }
+.btn-valider {
+  background: var(--vert); color: var(--blanc); border: none;
+  font-family: 'Josefin Sans', sans-serif; font-size: 11px; letter-spacing: 1px;
+  padding: 7px 14px; cursor: pointer; text-transform: uppercase;
+}
+.btn-refuser {
+  background: #b03a2e; color: var(--blanc); border: none;
+  font-family: 'Josefin Sans', sans-serif; font-size: 11px; letter-spacing: 1px;
+  padding: 7px 14px; cursor: pointer; text-transform: uppercase;
+}
+.btn-secondary {
+  background: transparent; color: var(--brun); border: 1.5px solid rgba(92,61,30,.3);
+  font-family: 'Josefin Sans', sans-serif; font-size: 11px; letter-spacing: 1px;
+  padding: 6px 12px; cursor: pointer; text-transform: uppercase;
+}
+.btn-valider:hover { background: var(--vert-clair); }
+.btn-refuser:hover { background: #922b21; }
+.pts-input {
+  width: 64px; border: 1.5px solid rgba(92,61,30,.2); background: var(--blanc);
+  font-family: 'Josefin Sans', sans-serif; font-size: 13px; color: var(--brun);
+  padding: 6px 8px; text-align: center;
+}
+.remarque-input {
+  width: 100%; border: 1.5px solid rgba(92,61,30,.15); background: var(--blanc);
+  font-family: 'Libre Baskerville', serif; font-size: 12px; color: var(--brun);
+  padding: 6px 10px; resize: vertical; margin-top: 8px;
+}
+
+/* ── HEURE ARRIVEE ── */
+.heure-arrivee-input {
+  border: 1.5px solid rgba(92,61,30,.2); background: var(--blanc);
+  font-family: 'Josefin Sans', sans-serif; font-size: 12px; color: var(--brun);
+  padding: 5px 8px;
+}
+
+/* ── LIGHTBOX ── */
+#lightbox {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,.9);
+  z-index: 9999; align-items: center; justify-content: center; cursor: pointer;
+}
+#lightbox.active { display: flex; }
+#lightbox img { max-width: 95vw; max-height: 90vh; object-fit: contain; border-radius: 2px; }
+#lightbox-close {
+  position: absolute; top: 16px; right: 20px; color: #fff; font-size: 32px;
+  cursor: pointer; font-family: 'Josefin Sans', sans-serif; line-height: 1;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 600px) {
+  .validation-card { grid-template-columns: 1fr; }
+  .validation-card img { width: 100%; height: 180px; }
+  .podium-grid { grid-template-columns: 1fr; }
+  .notation-header { padding: 16px 16px 14px; }
+  .classement-section { padding: 16px; }
+  .notation-groupe-card { padding: 16px; }
+  .cover { padding: 30px 20px; }
+  .cover h1 { font-size: 32px; }
+}
+</style>
+
+<!-- ── LIGHTBOX ── -->
+<div id="lightbox" onclick="closeLightbox()">
+  <div id="lightbox-close" onclick="closeLightbox()">✕</div>
+  <img id="lightbox-img" src="" alt=""/>
+</div>
+
+<!-- ══════════════════════════════════
+     FIREBASE + APP JAVASCRIPT
+══════════════════════════════════ -->
+<!-- Firebase SDK déjà chargé en tête de page -->
+<!-- jsPDF pour export PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+//  CONFIGURATION FIREBASE — Projet : Rallye Photo Barbizon 2
+// ═══════════════════════════════════════════════════════════════
+const firebaseConfig = {
+  apiKey:            "AIzaSyC7t3ecuKjLYYDswpzVigGLxwkzcM4KOS0",
+  authDomain:        "rallye-photo-barbizon-2.firebaseapp.com",
+  projectId:         "rallye-photo-barbizon-2",
+  storageBucket:     "rallye-photo-barbizon-2.firebasestorage.app",
+  messagingSenderId: "268220581268",
+  appId:             "1:268220581268:web:c6f128cd130be136693b81",
+  measurementId:     "G-QGYZ2G6CHF"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// ═══════════════════════════════════════════════════════════════
+//  CONFIGURATION CLOUDINARY (remplace Firebase Storage)
+// ═══════════════════════════════════════════════════════════════
+const CLOUDINARY_CLOUD_NAME  = 'dilm3i5kw';
+const CLOUDINARY_UPLOAD_PRESET = 'rallye-barbizon';
+const CLOUDINARY_UPLOAD_URL  = `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`;
+
+
+// ═══════════════════════════════════════════════════════════════
+//  DONNÉES GROUPES (référentiel local)
+// ═══════════════════════════════════════════════════════════════
+const GROUPES = [
+  { id:'A', nom:"L'École des Peintres", photos:[
+    {label:"Auberge Ganne — Façade principale",           consigne:"Cadrez la plaque avec un détail de façade XIXe.",                        bonus:false},
+    {label:"Maison-atelier de Théodore Rousseau",         consigne:"Cherchez la plaque commémorative sur la façade en pierre.",               bonus:false},
+    {label:"Atelier Jean-François Millet",                consigne:"Incluez la cour pavée ou la fenêtre d'atelier dans votre composition.",   bonus:false},
+    {label:"Mosaïque murale — Grande Rue",                consigne:"Identifiez et photographiez une mosaïque reproduisant un tableau.",       bonus:true},
+    {label:"Plaque commémorative d'artiste",              consigne:"La plaque doit être lisible sur la photo.",                               bonus:false},
+    {label:"Grande Rue — Perspective urbaine",            consigne:"Capturez la fuite de la rue avec galeries et façades.",                   bonus:true},
+    {label:"Galerie d'art — Vitrine",                     consigne:"Jouez sur le reflet ou la profondeur à travers la vitrine.",              bonus:false},
+    {label:"Hôtel Le Bas Bréau",                          consigne:"Cherchez un détail architectural ou l'entrée emblématique.",              bonus:false},
+    {label:"Office de Tourisme — Photo de groupe",        consigne:"Photo de groupe devant l'entrée, 2+ membres visibles.",                   bonus:false},
+    {label:"Détail architectural insolite (JOKER)",       consigne:"Montrez votre œil de photographe ! Plus c'est original, mieux c'est.",   bonus:false}
+  ]},
+  { id:'B', nom:"Au Cœur de la Forêt", photos:[
+    {label:"Panneau d'entrée de forêt",                   consigne:"Le panneau doit être net, arbres en fond.",                              bonus:false},
+    {label:"Rocher de l'Éléphant",                        consigne:"Trouvez l'angle où la silhouette animale est la plus évidente.",          bonus:true},
+    {label:"Médaillon Millet-Rousseau",                   consigne:"Capturez le médaillon avec son contexte rocheux.",                        bonus:false},
+    {label:"Stèle de la Première Réserve (1861)",         consigne:"La stèle doit être lisible, texte gravé si possible.",                   bonus:false},
+    {label:"Chaos d'Apremont — Rochers de grès",          consigne:"Contrastes roche/végétation, cherchez une forme animale.",               bonus:true},
+    {label:"Chêne Sully ou Chêne Charlemagne",            consigne:"Balisage jaune à proximité. Cadrez en contre-plongée.",                  bonus:false},
+    {label:"Balisage jaune du circuit des peintres",      consigne:"Marque jaune clairement visible, chemin en perspective.",                 bonus:false},
+    {label:"Lumière en sous-bois",                        consigne:"Contrejour ou rai de lumière spectaculaire. Pas de flash.",               bonus:true},
+    {label:"Tableau de J.B.C. Corot (chevalet)",          consigne:"Photographiez le tableau avec le paysage réel en arrière-plan.",         bonus:false},
+    {label:"Paysage de forêt — Vue libre (JOKER)",        consigne:"Imaginez que vous êtes un peintre de l'École de Barbizon.",              bonus:false}
+  ]},
+  { id:'C', nom:"Vie de Village", photos:[
+    {label:"Boulangerie ou commerce traditionnel",        consigne:"Devanture avec enseigne. Un client en arrière-plan = +5 pts.",            bonus:true},
+    {label:"L'Esquisse — Café culturel",                  consigne:"Entrée ou terrasse, cherchez un détail artistique.",                      bonus:false},
+    {label:"Église Notre-Dame de la Persévérance",        consigne:"Clocher ou portail avec les arbres de la rue.",                          bonus:false},
+    {label:"Mairie de Barbizon",                          consigne:"Le drapeau français doit être visible avec les 3 couleurs.",              bonus:false},
+    {label:"La Folie Barbizon — Restaurant artistique",   consigne:"Cherchez une œuvre d'art visible depuis la rue.",                        bonus:false},
+    {label:"Besharat Gallery — Jardin de sculptures",     consigne:"Une sculpture avec la végétation. Interaction art-nature requise.",       bonus:true},
+    {label:"Fontaine ou point d'eau du village",          consigne:"Cherchez le reflet ou le mouvement de l'eau.",                           bonus:false},
+    {label:"Mur de pierre ou portail ancien",             consigne:"Cherchez mousse, vigne vierge ou lierre — la texture est le sujet.",     bonus:true},
+    {label:"Panneau d'entrée du village — Selfie équipe", consigne:"Toute l'équipe en selfie. La feuille de route doit être visible.",       bonus:false},
+    {label:"Portrait d'habitant ou de passant (JOKER)",   consigne:"Avec son accord. Bonus si anecdote sur Barbizon.",                       bonus:false}
+  ]},
+  { id:'D', nom:"Lumières & Textures", photos:[
+    {label:"Rayon de lumière en sous-bois",               consigne:"Contrejour naturel entre les troncs. Aucun flash.",                      bonus:true},
+    {label:"Texture de rocher de grès (macro)",           consigne:"Gros plan : faites disparaître l'échelle.",                              bonus:false},
+    {label:"Reflet dans une surface brillante",           consigne:"Le reflet doit reconnaître un lieu emblématique.",                        bonus:true},
+    {label:"Ombre portée géométrique",                    consigne:"L'ombre occupe au moins 50 % du cadre.",                                 bonus:false},
+    {label:"Écorce d'arbre centenaire",                   consigne:"Le plus vieux tronc possible, mousse ou lichen est un plus.",            bonus:false},
+    {label:"Pierre ancienne — Façade Grande Rue",         consigne:"Assemblage de pierres taillées, joints visibles.",                       bonus:false},
+    {label:"Couleur dominante — Monochrome naturel",      consigne:"Un seul teinte dominante, pas de filtre numérique.",                     bonus:true},
+    {label:"Pavé ou sol ancien",                          consigne:"Photo au ras du sol, perspective de profondeur.",                        bonus:false},
+    {label:"Feuillage à contre-jour",                     consigne:"Visez vers le ciel, conservez le détail des nervures.",                  bonus:false},
+    {label:"Texture libre — Au choix (JOKER)",            consigne:"Justifiez votre choix en une phrase.",                                   bonus:false}
+  ]},
+  { id:'E', nom:"Détails & Miniatures", photos:[
+    {label:"Heurtoir ou poignée de porte ancienne",       consigne:"Gros plan, le métal révèle son usure.",                                  bonus:false},
+    {label:"Numéro de maison peint ou gravé",             consigne:"Lisible, cherchez le plus original.",                                    bonus:false},
+    {label:"Fleur ou plante en pot — Fenêtre / seuil",    consigne:"Cadrez fleur ET façade. Profondeur de champ réduite si possible.",       bonus:true},
+    {label:"Inscription ou lettrage peint à la main",     consigne:"Typographie ancienne, l'ensemble du lettrage dans le cadre.",            bonus:false},
+    {label:"Insecte ou petit animal en forêt",            consigne:"Net et identifiable. Patience et discrétion requises.",                  bonus:true},
+    {label:"Champignon ou mousse sur rocher",             consigne:"Cadrez au niveau du sol, mise au point parfaite.",                       bonus:false},
+    {label:"Détail d'une mosaïque murale (macro)",        consigne:"Extreme close-up — rendez-le abstrait.",                                 bonus:true},
+    {label:"Clef de voûte ou linteau sculpté",            consigne:"Levez les yeux ! La sculpture seule doit être nette.",                   bonus:false},
+    {label:"Toile d'araignée avec rosée",                 consigne:"Fond sombre ou flou pour faire ressortir la structure.",                 bonus:false},
+    {label:"Détail surprenant — Au choix (JOKER)",        consigne:"Un petit rien que personne n'aura photographié aujourd'hui.",            bonus:false}
+  ]},
+  { id:'F', nom:"Contrastes & Temps", photos:[
+    {label:"Ancien & Moderne côte à côte",                consigne:"Bâtiment XIXe + élément contemporain visible.",                          bonus:true},
+    {label:"Peinture vs Photographie",                    consigne:"Tableau et paysage qui l'a inspiré dans le même cadre.",                 bonus:true},
+    {label:"Porte ouverte / Porte fermée (diptyque)",     consigne:"Deux photos du même lieu dans chaque état.",                            bonus:false},
+    {label:"Ruine ou bâtiment à l'abandon",               consigne:"Végétation qui envahit la pierre. Cherchez la poésie du délabrement.",  bonus:false},
+    {label:"Jeune & Vieux — Contraste humain",            consigne:"Portrait spontané, avec accord. Complicité visible.",                    bonus:true},
+    {label:"Ombre & Lumière — Fort contraste",            consigne:"Ligne de démarcation nette et dramatique. Exposez sur les hautes lumières.", bonus:false},
+    {label:"Nature qui reprend ses droits",               consigne:"Nature gagnant sur le minéral. Cadrez serré sur le point de contact.",   bonus:false},
+    {label:"Panneau circuit peintres + balisage jaune",   consigne:"Le panneau ET le balisage jaune visibles.",                             bonus:false},
+    {label:"Cimetière de Chailly-en-Bière (vue route)",   consigne:"Vue de l'entrée ou mur extérieur suffisante.",                          bonus:false},
+    {label:"Contraste libre — Au choix (JOKER)",          consigne:"Un contraste qui raconte une histoire en un seul cadre.",               bonus:false}
+  ]}
+];
+
+// ═══════════════════════════════════════════════════════════════
+//  ÉTAT GLOBAL
+// ═══════════════════════════════════════════════════════════════
+const CODE_ENSEIGNANT = '1234';
+let allPhotos   = [];   // toutes les photos depuis Firestore
+let groupeScores = {};  // { A: { score, arrivee, manualPts } }
+let unsubPhotos = null; // listener Firestore
+
+GROUPES.forEach(g => {
+  groupeScores[g.id] = { score: 0, arrivee: '', manualPts: new Array(10).fill(0), manualBonus: new Array(10).fill(false) };
+});
+
+// ═══════════════════════════════════════════════════════════════
+//  ONGLETS
+// ═══════════════════════════════════════════════════════════════
+function switchTab(tab) {
+  document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  event.currentTarget.classList.add('active');
+  if (tab === 'classement') loadPublicClassement();
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  AUTHENTIFICATION ENSEIGNANT
+// ═══════════════════════════════════════════════════════════════
+function checkCode() {
+  const v = document.getElementById('lockInput').value;
+  if (v === CODE_ENSEIGNANT) {
+    document.getElementById('lockScreen').style.display = 'none';
+    document.getElementById('notationWrap').style.display = 'block';
+    initTeacher();
+  } else {
+    const err = document.getElementById('lockError');
+    err.style.display = 'block';
+    document.getElementById('lockInput').value = '';
+    document.getElementById('lockInput').focus();
+    setTimeout(() => err.style.display = 'none', 3000);
+  }
+}
+function logout() {
+  document.getElementById('lockScreen').style.display = 'flex';
+  document.getElementById('notationWrap').style.display = 'none';
+  document.getElementById('lockInput').value = '';
+  if (unsubPhotos) { unsubPhotos(); unsubPhotos = null; }
+}
+document.getElementById('lockInput')?.addEventListener('keydown', e => { if (e.key === 'Enter') checkCode(); });
+
+// ═══════════════════════════════════════════════════════════════
+//  INIT ENSEIGNANT
+// ═══════════════════════════════════════════════════════════════
+function initTeacher() {
+  buildNotationGrid();
+  loadGroupeScores();
+  listenPhotos();
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  FIRESTORE — SCORES GROUPES
+// ═══════════════════════════════════════════════════════════════
+function loadGroupeScores() {
+  GROUPES.forEach(async g => {
+    const snap = await db.collection('groupes').doc(g.id).get();
+    if (snap.exists) {
+      const d = snap.data();
+      groupeScores[g.id] = { ...groupeScores[g.id], ...d };
+      // Heure arrivée
+      const el = document.getElementById('heure-'+g.id);
+      if (el && d.arrivee) el.value = d.arrivee;
+      // Notes manuelles
+      if (d.manualPts) {
+        d.manualPts.forEach((pts, i) => {
+          const inp = document.getElementById('pts-'+g.id+'-'+i);
+          if (inp) inp.value = pts;
+          groupeScores[g.id].manualPts[i] = pts;
+        });
+      }
+      if (d.manualBonus) {
+        d.manualBonus.forEach((bon, i) => {
+          const chk = document.getElementById('bonus-'+g.id+'-'+i);
+          if (chk) chk.checked = bon;
+          groupeScores[g.id].manualBonus[i] = bon;
+        });
+      }
+    }
+    computeGroupScore(g.id);
+  });
+}
+
+async function saveGroupeData(gid) {
+  const data = {
+    arrivee:    groupeScores[gid].arrivee || '',
+    manualPts:  groupeScores[gid].manualPts,
+    manualBonus:groupeScores[gid].manualBonus,
+    updatedAt:  firebase.firestore.FieldValue.serverTimestamp()
+  };
+  await db.collection('groupes').doc(gid).set(data, { merge: true });
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  FIRESTORE — ÉCOUTE TEMPS RÉEL DES PHOTOS
+// ═══════════════════════════════════════════════════════════════
+function listenPhotos() {
+  unsubPhotos = db.collection('photos')
+    .orderBy('uploadedAt', 'desc')
+    .onSnapshot(snap => {
+      allPhotos = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      renderPendingPhotos();
+      recomputeAllScores();
+      updateRanking();
+    }, err => console.error('Firestore listen error:', err));
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  ESPACE ÉLÈVES — UPLOAD
+// ═══════════════════════════════════════════════════════════════
+//  ESPACE ÉLÈVES — Sélection groupe → liste des 10 lieux numérotés
+//  On utilise window.MAP_REPERES défini dans le script carte
+// ═══════════════════════════════════════════════════════════════
+function updatePhotoSelect() {
+  const gid = document.getElementById('elv-groupe').value;
+  const sel  = document.getElementById('elv-photo');
+  sel.innerHTML = '<option value="">— Choisir le lieu à photographier —</option>';
+  document.getElementById('elv-consigne-box').style.display = 'none';
+  if (!gid) return;
+
+  const g = GROUPES.find(x => x.id === gid);
+  const reperes = (window.MAP_REPERES || []).filter(r => r.g === gid);
+
+  g.photos.forEach((p, i) => {
+    const r = reperes.find(x => x.n === (i + 1));
+    const opt = document.createElement('option');
+    opt.value = i;
+    // stocke les infos du repère en data-attributes
+    opt.dataset.repereN    = r ? r.n    : (i + 1);
+    opt.dataset.repereName = r ? r.name : p.label;
+    opt.dataset.repereAddr = r ? r.addr : '';
+    opt.textContent = `Repère ${String(i+1).padStart(2,'0')} — ${r ? r.name : p.label}`;
+    sel.appendChild(opt);
+  });
+
+  loadElvDeposees(gid);
+}
+
+function onPhotoSelect() {
+  const gid = document.getElementById('elv-groupe').value;
+  const sel  = document.getElementById('elv-photo');
+  const i    = parseInt(sel.value);
+  const box  = document.getElementById('elv-consigne-box');
+
+  if (isNaN(i) || !gid) { box.style.display = 'none'; return; }
+
+  const g   = GROUPES.find(x => x.id === gid);
+  const opt = sel.options[sel.selectedIndex];
+
+  document.getElementById('elv-lieu-badge').textContent  = 'N°' + opt.dataset.repereN;
+  document.getElementById('elv-lieu-name').textContent   = opt.dataset.repereName;
+  document.getElementById('elv-lieu-addr').textContent   = opt.dataset.repereAddr ? ('📍 ' + opt.dataset.repereAddr) : '';
+  document.getElementById('elv-consigne-text').textContent = g.photos[i].consigne;
+  box.style.display = 'block';
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  ESPACE ÉLÈVES — UPLOAD PHOTOS (version robuste + debug)
+// ═══════════════════════════════════════════════════════════════
+
+let selectedFile = null;
+
+// ── Sélection / drag-drop fichier ────────────────────────────────────────────
+function handleFileSelect(e) {
+  const f = e.target.files[0];
+  console.log('[UPLOAD] handleFileSelect →', f ? `${f.name} (${(f.size/1024).toFixed(0)} Ko, ${f.type})` : 'aucun fichier');
+  if (f) previewFile(f);
+}
+
+function handleDrop(e) {
+  e.preventDefault();
+  dropLeave(e);
+  const f = e.dataTransfer.files[0];
+  console.log('[UPLOAD] handleDrop →', f ? `${f.name}` : 'aucun fichier');
+  if (f && f.type.startsWith('image/')) previewFile(f);
+  else if (f) showElvError('Fichier non valide. Seules les images sont acceptées (JPG, PNG, HEIC).');
+}
+
+function dropEnter(e) { document.getElementById('dropzone').classList.add('drag-over'); }
+function dropLeave(e)  { document.getElementById('dropzone').classList.remove('drag-over'); }
+
+function previewFile(f) {
+  if (f.size > 10 * 1024 * 1024) {
+    showElvError(`Fichier trop grand : ${(f.size/1024/1024).toFixed(1)} Mo (max 10 Mo).`);
+    return;
+  }
+  if (!f.type.startsWith('image/')) {
+    showElvError('Type de fichier non valide. Utilisez JPG, PNG ou HEIC.');
+    return;
+  }
+  selectedFile = f;
+  console.log('[UPLOAD] Fichier sélectionné :', f.name, f.type, `${(f.size/1024).toFixed(0)} Ko`);
+  const reader = new FileReader();
+  reader.onload = ev => {
+    const img = document.getElementById('elv-preview');
+    img.src = ev.target.result;
+    img.style.display = 'block';
+    document.getElementById('dropzone-content').style.display = 'none';
+  };
+  reader.onerror = () => showElvError('Impossible de lire le fichier image.');
+  reader.readAsDataURL(f);
+}
+
+// ── Soumission du formulaire ──────────────────────────────────────────────────
+async function submitPhoto() {
+  hideElvMessages();
+  console.log('[UPLOAD] submitPhoto() déclenché');
+
+  // Vérifications initiales
+  const gid      = document.getElementById('elv-groupe').value;
+  const photoIdx = document.getElementById('elv-photo').value;
+  const comment  = (document.getElementById('elv-comment').value || '').trim();
+
+  if (!gid)          { showElvError('Veuillez sélectionner votre groupe.'); return; }
+  if (photoIdx === ''){ showElvError('Veuillez sélectionner le lieu à photographier.'); return; }
+  if (!selectedFile) { showElvError('Veuillez sélectionner une image depuis votre appareil.'); return; }
+
+  const g   = GROUPES.find(x => x.id === gid);
+  const idx = parseInt(photoIdx);
+  const p   = g.photos[idx];
+  const photoSel = document.getElementById('elv-photo');
+  const photoOpt = photoSel.options[photoSel.selectedIndex];
+
+  console.log('[UPLOAD] Groupe:', gid, '| Photo:', idx+1, '|', p.label);
+  console.log('[UPLOAD] Fichier:', selectedFile.name, selectedFile.type, selectedFile.size);
+
+  setBtnLoading(true);
+  showProgress(0);
+
+  // ── Étape 1 : Upload Cloudinary (remplace Firebase Storage) ───────────────
+  let url      = null;
+  let filename = null;
+  try {
+    console.log('[CLOUDINARY] Début upload…');
+    showProgress(0);
+
+    const formData = new FormData();
+    formData.append('file', selectedFile);
+    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+    formData.append('folder', 'rallye-barbizon');
+    formData.append('public_id', `groupe${gid}_photo${String(idx+1).padStart(2,'0')}_${Date.now()}`);
+
+    // Upload avec suivi de progression via XMLHttpRequest
+    url = await new Promise((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open('POST', CLOUDINARY_UPLOAD_URL);
+
+      xhr.upload.onprogress = e => {
+        if (e.lengthComputable) {
+          const pct = Math.round((e.loaded / e.total) * 100);
+          showProgress(pct);
+          console.log(`[CLOUDINARY] Progression : ${pct}%`);
+        }
+      };
+
+      xhr.onload = () => {
+        if (xhr.status === 200) {
+          const res = JSON.parse(xhr.responseText);
+          filename = res.public_id;
+          console.log('[CLOUDINARY] Upload terminé ✓ URL :', res.secure_url.substring(0, 60) + '…');
+          resolve(res.secure_url);
+        } else {
+          const err = JSON.parse(xhr.responseText);
+          reject(new Error(err.error?.message || 'Erreur Cloudinary ' + xhr.status));
+        }
+      };
+
+      xhr.onerror = () => reject(new Error('Erreur réseau — vérifiez votre connexion internet.'));
+      xhr.send(formData);
+    });
+
+  } catch (cloudErr) {
+    setBtnLoading(false);
+    hideProgress();
+    console.error('[CLOUDINARY] Échec :', cloudErr);
+    showElvError('Erreur upload image : ' + cloudErr.message);
+    return;
+  }
+
+  // ── Étape 2 : Écriture Firestore ────────────────────────────────────────────
+  let docRef = null;
+  try {
+    const data = {
+      groupeId:    gid,
+      groupeNom:   g.nom,
+      photoIndex:  idx,
+      photoLabel:  p.label,
+      consigne:    p.consigne,
+      bonusDispo:  false,  // uniformisé : bonus géré par l'enseignant uniquement
+      imageUrl:    url,
+      imagePath:   filename,
+      comment:     comment,
+      lieuRepere:  photoOpt?.dataset?.repereN    || String(idx+1),
+      lieuLabel:   photoOpt?.dataset?.repereName || p.label,
+      lieuAddr:    photoOpt?.dataset?.repereAddr || '',
+      statut:      'en_attente',
+      points:      0,
+      bonusPoints: 0,
+      remarque:    '',
+      uploadedAt:  firebase.firestore.FieldValue.serverTimestamp()
+    };
+
+    console.log('[FIRESTORE] Écriture collection "photos"…', { groupeId: gid, photoIndex: idx });
+    docRef = await db.collection('photos').add(data);
+    console.log('[FIRESTORE] Document créé ✓ ID :', docRef.id);
+
+  } catch (firestoreErr) {
+    setBtnLoading(false);
+    hideProgress();
+    let msg = 'Photo uploadée dans Storage ✓, mais erreur Firestore : ' + firestoreErr.message;
+    if (firestoreErr.code === 'permission-denied') {
+      msg = '⛔ Erreur de permission Firestore. Vérifiez les règles Firebase (autoriser lecture/écriture sur collection "photos").';
+    }
+    console.error('[FIRESTORE] Échec :', firestoreErr);
+    showElvError(msg + ` (fichier conservé : ${filename})`);
+    return;
+  }
+
+  // ── Étape 3 : Vérification post-upload ─────────────────────────────────────
+  try {
+    const checkSnap = await db.collection('photos').doc(docRef.id).get();
+    if (checkSnap.exists) {
+      console.log('[FIRESTORE] Vérification post-upload ✓ — document bien présent dans Firebase');
+    } else {
+      console.warn('[FIRESTORE] ⚠️ Document introuvable après écriture — vérifiez la règle Firestore.');
+    }
+  } catch (e) {
+    console.warn('[FIRESTORE] Vérification impossible :', e.message);
+  }
+
+  // ── Succès ──────────────────────────────────────────────────────────────────
+  setBtnLoading(false);
+  hideProgress();
+  document.getElementById('elv-success').innerHTML =
+    `<div style="font-family:'Josefin Sans',sans-serif;font-size:13px;color:var(--vert);">
+      ✅ <strong>Photo envoyée avec succès !</strong> Elle apparaîtra sous peu dans l'onglet enseignant.<br>
+      <span style="font-size:11px;color:var(--gris);">Repère ${photoOpt?.dataset?.repereN || idx+1} — ${p.label}</span>
+    </div>`;
+  document.getElementById('elv-success').style.display = 'block';
+
+  resetUploadForm();
+  // Recharge la liste côté élève après un court délai (le timestamp serveur prend un instant)
+  setTimeout(() => loadElvDeposees(gid), 800);
+}
+
+// ── Helpers UI ───────────────────────────────────────────────────────────────
+function showProgress(pct) {
+  document.getElementById('elv-progress-wrap').style.display = 'block';
+  document.getElementById('elv-progress-pct').textContent    = pct;
+  document.getElementById('elv-progress-bar').style.width    = pct + '%';
+}
+function hideProgress() {
+  document.getElementById('elv-progress-wrap').style.display = 'none';
+  document.getElementById('elv-progress-pct').textContent    = '0';
+  document.getElementById('elv-progress-bar').style.width    = '0%';
+}
+
+function resetUploadForm() {
+  selectedFile = null;
+  const fi = document.getElementById('elv-file');
+  if (fi) fi.value = '';
+  const prev = document.getElementById('elv-preview');
+  if (prev) { prev.src = ''; prev.style.display = 'none'; }
+  const dzc = document.getElementById('dropzone-content');
+  if (dzc) dzc.style.display = 'flex';
+  const com = document.getElementById('elv-comment');
+  if (com) com.value = '';
+  const ph = document.getElementById('elv-photo');
+  if (ph) ph.value = '';
+  const cb = document.getElementById('elv-consigne-box');
+  if (cb) cb.style.display = 'none';
+}
+
+function setBtnLoading(loading) {
+  const btn = document.getElementById('elv-submit-btn');
+  if (!btn) return;
+  btn.disabled = loading;
+  const t = document.getElementById('elv-btn-text');
+  const l = document.getElementById('elv-btn-loader');
+  if (t) t.style.display = loading ? 'none'   : 'inline';
+  if (l) l.style.display = loading ? 'inline' : 'none';
+}
+
+function showElvError(msg) {
+  const el  = document.getElementById('elv-error');
+  const txt = document.getElementById('elv-error-text');
+  if (txt) txt.innerHTML = msg;
+  if (el)  el.style.display = 'block';
+  console.error('[UPLOAD] Erreur affichée :', msg);
+}
+
+function hideElvMessages() {
+  const s = document.getElementById('elv-success');
+  const e = document.getElementById('elv-error');
+  if (s) s.style.display = 'none';
+  if (e) e.style.display = 'none';
+}
+
+// ── Chargement des dépôts côté élève ─────────────────────────────────────────
+async function loadElvDeposees(gid) {
+  const container = document.getElementById('elv-deposees');
+  if (!container) return;
+  container.innerHTML = '<div style="font-family:\'Josefin Sans\',sans-serif;font-size:12px;color:var(--gris)">Chargement…</div>';
+
+  console.log('[FIRESTORE] loadElvDeposees → groupe', gid);
+  try {
+    const snap = await db.collection('photos')
+      .where('groupeId', '==', gid)
+      .orderBy('uploadedAt', 'desc')
+      .get();
+
+    console.log(`[FIRESTORE] ${snap.size} dépôt(s) trouvé(s) pour groupe ${gid}`);
+
+    if (snap.empty) {
+      container.innerHTML = '<div style="font-family:\'Josefin Sans\',sans-serif;font-size:12px;color:var(--gris)">Aucun dépôt pour ce groupe.</div>';
+      return;
+    }
+
+    container.innerHTML = '';
+    snap.docs.forEach(doc => {
+      const d = doc.data();
+      const statusMap = { en_attente:'⏳ En attente', valide:'✅ Validée', refuse:'❌ Refusée' };
+      const statusCls = { en_attente:'status-pending', valide:'status-valide',  refuse:'status-refuse' };
+      const card = document.createElement('div');
+      card.className = 'photo-card';
+      card.innerHTML = `
+        <img src="${d.imageUrl}" alt="${d.photoLabel}" onclick="openLightbox('${d.imageUrl}')"/>
+        <div class="photo-card-body">
+          <div class="photo-card-groupe">Repère ${d.lieuRepere || String(d.photoIndex+1).padStart(2,'0')}</div>
+          <div class="photo-card-label">${d.lieuLabel || d.photoLabel}</div>
+          <div class="photo-card-meta">
+            <span class="status-badge ${statusCls[d.statut]||'status-pending'}">${statusMap[d.statut]||d.statut}</span>
+            ${(d.points||0) > 0 ? `<span style="margin-left:6px;color:var(--vert-clair);font-weight:700;">${(d.points||0) + (d.bonusPoints||0)} pts</span>` : ''}
+          </div>
+          ${d.remarque ? `<div style="font-size:11px;color:var(--gris);margin-top:4px;font-style:italic;">💬 ${d.remarque}</div>` : ''}
+        </div>`;
+      container.appendChild(card);
+    });
+  } catch (err) {
+    console.error('[FIRESTORE] loadElvDeposees erreur :', err.code, err.message);
+    let msg = 'Impossible de charger les dépôts.';
+    if (err.code === 'permission-denied') msg = '⛔ Accès refusé à Firestore. Vérifiez les règles.';
+    else if (err.code === 'failed-precondition') msg = '⚠️ Index Firestore manquant — voir la console Firebase pour créer l\'index.';
+    container.innerHTML = `<div style="font-family:'Josefin Sans',sans-serif;font-size:12px;color:#b03a2e">${msg}</div>`;
+  }
+}
+
+
+// ═══════════════════════════════════════════════════════════════
+//  ENSEIGNANT — VALIDATION PHOTOS
+// ═══════════════════════════════════════════════════════════════
+function filterPhotos() { renderPendingPhotos(); }
+
+function renderPendingPhotos() {
+  const container   = document.getElementById('photos-pending');
+  const filterGrp   = document.getElementById('filter-groupe')?.value || '';
+  const filtered    = allPhotos.filter(p => !filterGrp || p.groupeId === filterGrp);
+  const pending     = filtered.filter(p => p.statut === 'en_attente');
+  const nonPending  = filtered.filter(p => p.statut !== 'en_attente');
+  const display     = [...pending, ...nonPending];
+
+  document.getElementById('pending-count').textContent = pending.length;
+  container.innerHTML = '';
+
+  if (!display.length) {
+    container.innerHTML = '<div style="font-family:\'Josefin Sans\',sans-serif;font-size:12px;color:var(--gris)">Aucune photo déposée.</div>';
+    return;
+  }
+
+  display.forEach(photo => {
+    const statusCls = { en_attente:'', valide:'valide', refuse:'refuse' };
+    const ts = photo.uploadedAt?.toDate ? photo.uploadedAt.toDate().toLocaleString('fr-FR') : '—';
+    const card = document.createElement('div');
+    card.className = `validation-card ${statusCls[photo.statut]||''}`;
+    card.id = 'vc-' + photo.id;
+    card.innerHTML = `
+      <img src="${photo.imageUrl}" alt="${photo.photoLabel}" onclick="openLightbox('${photo.imageUrl}')"/>
+      <div class="vc-body">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap;">
+          <span style="font-family:'Josefin Sans',sans-serif;font-size:11px;letter-spacing:2px;color:var(--ocre);text-transform:uppercase;">Groupe ${photo.groupeId}</span>
+          <span class="status-badge status-${photo.statut==='en_attente'?'pending':photo.statut==='valide'?'valide':'refuse'}">${photo.statut==='en_attente'?'⏳ En attente':photo.statut==='valide'?'✅ Validée':'❌ Refusée'}</span>
+        </div>
+        <div style="font-size:13px;color:var(--brun);font-weight:700;margin-bottom:2px;">Photo ${String(photo.photoIndex+1).padStart(2,'0')} — ${photo.photoLabel}</div>
+        <div style="font-size:11px;color:var(--gris);font-style:italic;margin-bottom:4px;">${photo.consigne}</div>
+        ${photo.comment ? `<div style="font-size:12px;color:var(--brun);margin-bottom:4px;">💬 ${photo.comment}</div>` : ''}
+        <div style="font-family:'Josefin Sans',sans-serif;font-size:10px;color:var(--gris);">Déposée le ${ts}</div>
+        <div class="vc-actions">
+          <button class="btn-valider" onclick="validatePhoto('${photo.id}', 'valide')">✅ Valider</button>
+          <button class="btn-refuser" onclick="validatePhoto('${photo.id}', 'refuse')">❌ Refuser</button>
+          <label style="font-family:'Josefin Sans',sans-serif;font-size:11px;color:var(--gris);">Pts:</label>
+          <input type="number" class="pts-input" id="vc-pts-${photo.id}" value="${photo.points||10}" min="0" max="15"/>
+          ${photo.bonusDispo ? `<label style="font-family:'Josefin Sans',sans-serif;font-size:11px;color:var(--ocre);">+Bonus</label>
+          <input type="checkbox" id="vc-bonus-${photo.id}" ${photo.bonusPoints?'checked':''} style="accent-color:var(--ocre);width:18px;height:18px;"/>` : ''}
+          <button class="btn-secondary" onclick="saveValidation('${photo.id}')">💾</button>
+        </div>
+        <textarea class="remarque-input" id="vc-rem-${photo.id}" placeholder="Remarque enseignant…" rows="2">${photo.remarque||''}</textarea>
+      </div>`;
+    container.appendChild(card);
+  });
+}
+
+async function validatePhoto(photoId, statut) {
+  const ptsEl  = document.getElementById('vc-pts-'+photoId);
+  const bonEl  = document.getElementById('vc-bonus-'+photoId);
+  const remEl  = document.getElementById('vc-rem-'+photoId);
+  const pts    = ptsEl ? parseInt(ptsEl.value)||0 : 10;
+  const bonus  = bonEl ? (bonEl.checked ? 5 : 0) : 0;
+  const rem    = remEl ? remEl.value.trim() : '';
+
+  await db.collection('photos').doc(photoId).update({
+    statut,
+    points:       pts,
+    bonusPoints:  bonus,
+    remarque:     rem,
+    validatedAt:  firebase.firestore.FieldValue.serverTimestamp()
+  });
+}
+
+async function saveValidation(photoId) {
+  const ptsEl = document.getElementById('vc-pts-'+photoId);
+  const bonEl = document.getElementById('vc-bonus-'+photoId);
+  const remEl = document.getElementById('vc-rem-'+photoId);
+  const pts   = ptsEl ? parseInt(ptsEl.value)||0 : 0;
+  const bonus = bonEl ? (bonEl.checked ? 5 : 0) : 0;
+  const rem   = remEl ? remEl.value.trim() : '';
+
+  await db.collection('photos').doc(photoId).update({
+    points:      pts,
+    bonusPoints: bonus,
+    remarque:    rem,
+    updatedAt:   firebase.firestore.FieldValue.serverTimestamp()
+  });
+
+  const btn = document.querySelector(`#vc-${photoId} .btn-secondary`);
+  if (btn) { btn.textContent = '✅'; setTimeout(() => btn.textContent = '💾', 1500); }
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  CALCUL SCORES
+// ═══════════════════════════════════════════════════════════════
+function recomputeAllScores() {
+  GROUPES.forEach(g => computeGroupScore(g.id));
+}
+
+function computeGroupScore(gid) {
+  // Points Firebase (photos validées)
+  const validated = allPhotos.filter(p => p.groupeId === gid && p.statut === 'valide');
+  const firebasePts = validated.reduce((sum, p) => sum + (p.points||0) + (p.bonusPoints||0), 0);
+
+  // Points manuels (grille notation)
+  const manualPts   = groupeScores[gid].manualPts   || [];
+  const manualBonus = groupeScores[gid].manualBonus || [];
+  const manualTotal = manualPts.reduce((s, v) => s + (v||0), 0)
+                    + manualBonus.reduce((s, v) => s + (v ? 5 : 0), 0);
+
+  groupeScores[gid].score = firebasePts + manualTotal;
+  groupeScores[gid].photosOk = validated.length;
+
+  const badge = document.getElementById('badge-'+gid);
+  if (badge) badge.textContent = groupeScores[gid].score + ' pts';
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  CLASSEMENT
+// ═══════════════════════════════════════════════════════════════
+function updateRanking() {
+  const sorted = GROUPES.map(g => ({
+    id:      g.id,
+    nom:     g.nom,
+    score:   groupeScores[g.id].score || 0,
+    arrivee: groupeScores[g.id].arrivee || '',
+    ok:      groupeScores[g.id].photosOk || 0
+  })).sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    // Ex æquo : heure d'arrivée croissante
+    if (!a.arrivee && !b.arrivee) return 0;
+    if (!a.arrivee) return 1;
+    if (!b.arrivee) return -1;
+    return a.arrivee.localeCompare(b.arrivee);
+  });
+
+  const maxScore = Math.max(...sorted.map(s => s.score), 1);
+  const medals = ['🥇','🥈','🥉'];
+  const podClasses = ['p1','p2','p3'];
+
+  // Podium
+  let podHtml = '';
+  for (let i = 0; i < 3; i++) {
+    const s = sorted[i];
+    podHtml += `<div class="podium-card ${podClasses[i]||''}">
+      <div class="podium-medal">${medals[i]||''}</div>
+      <div class="podium-groupe">Groupe ${s.id}</div>
+      <div class="podium-nom">${s.nom}</div>
+      <div class="podium-score">${s.score}<span> pts</span></div>
+      ${s.arrivee ? `<div style="font-family:'Josefin Sans',sans-serif;font-size:10px;color:var(--gris)">⏱ ${s.arrivee}</div>` : ''}
+    </div>`;
+  }
+  document.getElementById('podiumGrid').innerHTML = podHtml;
+
+  // Tableau
+  let bodyHtml = '';
+  sorted.forEach((s, idx) => {
+    const bar = Math.round((s.score / maxScore) * 100);
+    bodyHtml += `<tr>
+      <td class="rank-pos">${idx+1}</td>
+      <td><div class="rank-groupe">Groupe ${s.id}</div><div class="rank-nom">${s.nom}</div></td>
+      <td style="text-align:center">${s.ok}/10</td>
+      <td style="text-align:center;color:var(--ocre)">—</td>
+      <td style="text-align:center;color:#b03a2e">—</td>
+      <td class="rank-score">${s.score} pts</td>
+      <td>
+        <input type="time" class="heure-arrivee-input" id="heure-${s.id}" value="${s.arrivee}"
+          onchange="setArrivee('${s.id}',this.value)" style="width:90px;"/>
+      </td>
+      <td>
+        <button class="btn-secondary" onclick="exportPDF('${s.id}')" style="font-size:10px;padding:5px 8px;">PDF</button>
+      </td>
+    </tr>`;
+  });
+  document.getElementById('rankingBody').innerHTML = bodyHtml;
+}
+
+async function setArrivee(gid, val) {
+  groupeScores[gid].arrivee = val;
+  await db.collection('groupes').doc(gid).set({ arrivee: val }, { merge: true });
+  updateRanking();
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  CLASSEMENT PUBLIC
+// ═══════════════════════════════════════════════════════════════
+async function loadPublicClassement() {
+  // Charger les données groupes
+  const snaps = await Promise.all(GROUPES.map(g => db.collection('groupes').doc(g.id).get()));
+  const scores = {};
+  GROUPES.forEach((g, i) => {
+    const d = snaps[i].exists ? snaps[i].data() : {};
+    scores[g.id] = { arrivee: d.arrivee||'', score: 0, nom: g.nom };
+  });
+
+  // Charger photos validées
+  const photoSnap = await db.collection('photos').where('statut','==','valide').get();
+  photoSnap.docs.forEach(doc => {
+    const d = doc.data();
+    scores[d.groupeId].score += (d.points||0) + (d.bonusPoints||0);
+  });
+
+  const sorted = Object.entries(scores).map(([id, v]) => ({ id, ...v }))
+    .sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      if (!a.arrivee && !b.arrivee) return 0;
+      if (!a.arrivee) return 1;
+      if (!b.arrivee) return -1;
+      return a.arrivee.localeCompare(b.arrivee);
+    });
+
+  // Podium
+  const medals = ['🥇','🥈','🥉'];
+  const podClasses = ['p1','p2','p3'];
+  document.getElementById('pub-podiumGrid').innerHTML = sorted.slice(0,3).map((s,i) => `
+    <div class="podium-card ${podClasses[i]}">
+      <div class="podium-medal">${medals[i]}</div>
+      <div class="podium-groupe">Groupe ${s.id}</div>
+      <div class="podium-nom">${s.nom}</div>
+      <div class="podium-score">${s.score}<span> pts</span></div>
+    </div>`).join('');
+
+  // Tableau
+  const maxScore = Math.max(...sorted.map(s => s.score), 1);
+  document.getElementById('pub-rankingBody').innerHTML = sorted.map((s, i) => `
+    <tr>
+      <td class="rank-pos">${i+1}</td>
+      <td><div class="rank-groupe">Groupe ${s.id}</div><div class="rank-nom">${s.nom}</div></td>
+      <td style="text-align:center">${photoSnap.docs.filter(d=>d.data().groupeId===s.id).length}/10</td>
+      <td class="rank-score">${s.score} pts</td>
+      <td style="font-family:'Josefin Sans',sans-serif;font-size:12px;color:var(--gris);">${s.arrivee||'—'}</td>
+      <td class="rank-bar-wrap"><div class="rank-bar" style="width:${Math.round(s.score/maxScore*100)}%"></div></td>
+    </tr>`).join('');
+
+  // Galerie photos validées
+  const galerieEl = document.getElementById('pub-galerie');
+  if (photoSnap.empty) {
+    galerieEl.innerHTML = '<div style="font-family:\'Josefin Sans\',sans-serif;font-size:12px;color:var(--gris);grid-column:1/-1;">Aucune photo validée pour l\'instant.</div>';
+  } else {
+    galerieEl.innerHTML = photoSnap.docs.map(doc => {
+      const d = doc.data();
+      return `<div class="photo-card">
+        <img src="${d.imageUrl}" alt="${d.photoLabel}" onclick="openLightbox('${d.imageUrl}')"/>
+        <div class="photo-card-body">
+          <div class="photo-card-groupe">Groupe ${d.groupeId} · Photo ${String(d.photoIndex+1).padStart(2,'0')}</div>
+          <div class="photo-card-label">${d.photoLabel}</div>
+          <div style="font-family:'Josefin Sans',sans-serif;font-size:11px;color:var(--vert-clair);">+${d.points+d.bonusPoints} pts</div>
+        </div></div>`;
+    }).join('');
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  GRILLE NOTATION MANUELLE ENSEIGNANT
+// ═══════════════════════════════════════════════════════════════
+function buildNotationGrid() {
+  const container = document.getElementById('notationGroupes');
+  if (container.children.length > 0) return;
+
+  GROUPES.forEach(g => {
+    const card = document.createElement('div');
+    card.className = 'notation-groupe-card';
+    card.id = 'ng-' + g.id;
+
+    let html = `<div class="ng-header" onclick="toggleNG('${g.id}')">
+      <div class="ng-num">${g.id}</div>
+      <div class="ng-title">${g.nom}</div>
+      <div class="ng-total-badge" id="badge-${g.id}">0 pts</div>
+      <div class="ng-toggle" id="toggle-${g.id}">▼ Déplier</div>
+    </div>
+    <div class="ng-photos" id="photos-${g.id}" style="display:none;">
+      <div class="ng-photo-row" style="font-family:'Josefin Sans',sans-serif;font-size:10px;letter-spacing:2px;color:var(--gris);text-transform:uppercase;">
+        <span></span><span>Sujet</span><span style="text-align:center">Points</span><span style="text-align:center">Bonus +5</span><span></span>
+      </div>`;
+
+    g.photos.forEach((p, i) => {
+      html += `<div class="ng-photo-row" style="grid-template-columns:30px 1fr 80px 70px 80px;">
+        <div class="ng-photo-num">0${i+1}</div>
+        <div class="ng-photo-name">${p.label}${p.bonus?'<small style="color:var(--ocre)">Bonus dispo</small>':''}</div>
+        <div style="text-align:center;">
+          <input type="number" class="pts-input" id="pts-${g.id}-${i}" value="0" min="0" max="10"
+            onchange="updateManualScore('${g.id}',${i})"/>
+        </div>
+        <div style="text-align:center;">
+          ${p.bonus ? `<input type="checkbox" class="ng-bonus-check" id="bonus-${g.id}-${i}"
+            onchange="updateManualScore('${g.id}',${i})" style="width:18px;height:18px;accent-color:var(--ocre);"/>` : '—'}
+        </div>
+        <div style="text-align:right;">
+          <span id="mpts-${g.id}-${i}" style="font-family:'Josefin Sans',sans-serif;font-size:12px;color:var(--vert-clair);">—</span>
+        </div>
+      </div>`;
+    });
+
+    html += `<button class="save-btn" onclick="saveManualScores('${g.id}')" style="margin-top:14px;">💾 Enregistrer Groupe ${g.id}</button>
+      <div class="save-confirm" id="saved-${g.id}" style="font-family:'Josefin Sans',sans-serif;font-size:11px;color:var(--vert-clair);margin-top:6px;display:none;">✅ Enregistré !</div>
+    </div>`;
+
+    card.innerHTML = html;
+    container.appendChild(card);
+  });
+}
+
+function toggleNG(id) {
+  const el  = document.getElementById('photos-'+id);
+  const tog = document.getElementById('toggle-'+id);
+  const open = el.style.display === 'none';
+  el.style.display = open ? 'block' : 'none';
+  tog.textContent  = open ? '▲ Replier' : '▼ Déplier';
+}
+
+function updateManualScore(gid, photoIdx) {
+  const ptsEl = document.getElementById('pts-'+gid+'-'+photoIdx);
+  const bonEl = document.getElementById('bonus-'+gid+'-'+photoIdx);
+  const pts   = parseInt(ptsEl?.value) || 0;
+  const bon   = bonEl?.checked || false;
+  groupeScores[gid].manualPts[photoIdx]   = pts;
+  groupeScores[gid].manualBonus[photoIdx] = bon;
+  const total = pts + (bon ? 5 : 0);
+  const label = document.getElementById('mpts-'+gid+'-'+photoIdx);
+  if (label) label.textContent = total > 0 ? total+' pts' : '—';
+  computeGroupScore(gid);
+  updateRanking();
+}
+
+async function saveManualScores(gid) {
+  await saveGroupeData(gid);
+  const conf = document.getElementById('saved-'+gid);
+  if (conf) { conf.style.display='block'; setTimeout(()=>conf.style.display='none', 2000); }
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  EXPORT PDF
+// ═══════════════════════════════════════════════════════════════
+async function exportPDF(gid) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4' });
+  const g   = GROUPES.find(x => x.id === gid);
+  const score = groupeScores[gid]?.score || 0;
+  const arrivee = groupeScores[gid]?.arrivee || '—';
+
+  // En-tête
+  doc.setFillColor(45, 74, 45);
+  doc.rect(0, 0, 210, 40, 'F');
+  doc.setTextColor(245, 240, 232);
+  doc.setFontSize(22);
+  doc.setFont('helvetica', 'bold');
+  doc.text(`Rallye Photo Barbizon — Groupe ${gid}`, 14, 18);
+  doc.setFontSize(12);
+  doc.setFont('helvetica', 'normal');
+  doc.text(g.nom, 14, 27);
+  doc.setFontSize(10);
+  doc.text(`Score final : ${score} pts  |  Arrivée : ${arrivee}`, 14, 35);
+
+  let y = 50;
+  doc.setTextColor(92, 61, 30);
+
+  // Photos
+  const photoSnap = await db.collection('photos').where('groupeId','==',gid).orderBy('photoIndex').get();
+
+  for (const docSnap of photoSnap.docs) {
+    const p = docSnap.data();
+    if (y > 240) { doc.addPage(); y = 14; }
+
+    // Ligne séparatrice
+    doc.setDrawColor(200, 132, 58);
+    doc.line(14, y, 196, y);
+    y += 4;
+
+    // Numéro + label
+    doc.setFontSize(11);
+    doc.setFont('helvetica', 'bold');
+    doc.setTextColor(45, 74, 45);
+    doc.text(`Photo ${String(p.photoIndex+1).padStart(2,'0')} — ${p.photoLabel}`, 14, y);
+    y += 5;
+
+    doc.setFontSize(9);
+    doc.setFont('helvetica', 'italic');
+    doc.setTextColor(138, 128, 120);
+    const lines = doc.splitTextToSize(`Consigne : ${p.consigne}`, 180);
+    doc.text(lines, 14, y);
+    y += lines.length * 4;
+
+    // Statut + points
+    doc.setFont('helvetica', 'normal');
+    const statusLabel = p.statut==='valide'?'✓ Validée':p.statut==='refuse'?'✗ Refusée':'⏳ En attente';
+    doc.setTextColor(p.statut==='valide'?15:p.statut==='refuse'?132:133, p.statut==='valide'?81:p.statut==='refuse'?42:64, p.statut==='valide'?50:p.statut==='refuse'?41:0);
+    doc.text(`Statut : ${statusLabel}  |  Points : ${(p.points||0)+(p.bonusPoints||0)} pts`, 14, y);
+    y += 5;
+
+    if (p.comment) {
+      doc.setTextColor(92, 61, 30);
+      doc.setFontSize(9);
+      doc.text(`Commentaire élève : ${p.comment}`, 14, y);
+      y += 4;
+    }
+    if (p.remarque) {
+      doc.setTextColor(45, 74, 45);
+      doc.text(`Remarque enseignant : ${p.remarque}`, 14, y);
+      y += 4;
+    }
+
+    // Image
+    try {
+      const imgData = await fetchImageAsBase64(p.imageUrl);
+      if (imgData) {
+        const imgH = 45;
+        if (y + imgH > 270) { doc.addPage(); y = 14; }
+        doc.addImage(imgData, 'JPEG', 14, y, 60, imgH, '', 'MEDIUM');
+        y += imgH + 8;
+      } else { y += 8; }
+    } catch { y += 8; }
+  }
+
+  // Footer
+  const totalPages = doc.getNumberOfPages();
+  for (let i = 1; i <= totalPages; i++) {
+    doc.setPage(i);
+    doc.setFontSize(8);
+    doc.setTextColor(138, 128, 120);
+    doc.text(`Rallye Photo Barbizon — Groupe ${gid} — Page ${i}/${totalPages} — Généré le ${new Date().toLocaleDateString('fr-FR')}`, 14, 290);
+  }
+
+  doc.save(`Rallye_Barbizon_Groupe${gid}.pdf`);
+}
+
+async function exportAllPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4' });
+
+  // Couverture
+  doc.setFillColor(45, 74, 45);
+  doc.rect(0, 0, 210, 297, 'F');
+  doc.setTextColor(245, 240, 232);
+  doc.setFontSize(28);
+  doc.setFont('helvetica', 'bold');
+  doc.text('Rallye Photo', 105, 100, {align:'center'});
+  doc.setFontSize(20);
+  doc.text('Barbizon', 105, 115, {align:'center'});
+  doc.setFontSize(12);
+  doc.setFont('helvetica', 'normal');
+  doc.text(`Bilan complet — ${new Date().toLocaleDateString('fr-FR')}`, 105, 140, {align:'center'});
+
+  // Classement global
+  doc.addPage();
+  let y = 20;
+  doc.setTextColor(45, 74, 45);
+  doc.setFontSize(16);
+  doc.setFont('helvetica', 'bold');
+  doc.text('Classement Final', 14, y); y += 10;
+
+  const sorted = GROUPES.map(g => ({
+    id:g.id, nom:g.nom,
+    score: groupeScores[g.id]?.score||0,
+    arrivee: groupeScores[g.id]?.arrivee||'—'
+  })).sort((a,b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    if (!a.arrivee||a.arrivee==='—') return 1;
+    if (!b.arrivee||b.arrivee==='—') return -1;
+    return a.arrivee.localeCompare(b.arrivee);
+  });
+
+  sorted.forEach((s, i) => {
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'normal');
+    doc.setTextColor(92, 61, 30);
+    doc.text(`${i+1}. Groupe ${s.id} — ${s.nom} — ${s.score} pts — Arrivée : ${s.arrivee}`, 14, y);
+    y += 7;
+  });
+
+  doc.save('Rallye_Barbizon_Global.pdf');
+}
+
+async function fetchImageAsBase64(url) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = img.width; canvas.height = img.height;
+      canvas.getContext('2d').drawImage(img, 0, 0);
+      resolve(canvas.toDataURL('image/jpeg', 0.7));
+    };
+    img.onerror = () => resolve(null);
+    img.src = url;
+  });
+}
+
+// ═══════════════════════════════════════════════════════════════
+//  LIGHTBOX
+// ═══════════════════════════════════════════════════════════════
+function openLightbox(url) {
+  document.getElementById('lightbox-img').src = url;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+// ═══════════════════════════════════════════════════════════════
+//  README INTÉGRÉ — téléchargeable depuis l'espace enseignant
+// ═══════════════════════════════════════════════════════════════
+function downloadReadme() {
+  const content = `# 📷 Rallye Photo Barbizon
+
+Application web complète pour organiser, gérer et noter un rallye photo scolaire
+dans le village de Barbizon (Forêt de Fontainebleau).
+
+## Projet Firebase
+- Project ID : rallye-photo-barbizon
+- Région     : europe-west1
+- Storage    : rallye-photo-barbizon.firebasestorage.app
+- App ID     : 1:486043518228:web:1b367da7c3627b07d26e01
+
+## Groupes & Circuits
+A — L'École des Peintres
+B — Au Cœur de la Forêt
+C — Vie de Village
+D — Lumières & Textures
+E — Détails & Miniatures
+F — Contrastes & Temps
+
+## Structure Firestore
+
+Collection "photos" :
+  groupeId, groupeNom, photoIndex, photoLabel, consigne, bonusDispo,
+  imageUrl, imagePath, comment, statut, points, bonusPoints, remarque, uploadedAt
+
+Collection "groupes" :
+  arrivee (HH:MM), manualPts[10], manualBonus[10], updatedAt
+
+## Firebase Storage
+Chemin : photos/groupe{ID}_photo{NN}_{timestamp}.{ext}
+
+## Classement
+1. Score total = points Firestore validés + points manuels
+2. Tri décroissant par score
+3. Départage ex aequo : heure d'arrivée croissante
+
+## Accès
+- Élèves   : Fiche de Route, Dépôt Photos, Classement (libres)
+- Enseignant : Notation Enseignant (code 1234)
+
+## Règles Firestore recommandées
+  photos   : read/write public
+  groupes  : read/write public
+
+## Règles Storage recommandées
+  /photos/** : read public, write si < 10 Mo et type image/*
+
+## Export PDF
+  Par équipe : Rallye_Barbizon_GroupeX.pdf
+  Global     : Rallye_Barbizon_Global.pdf
+
+## Dépendances CDN
+  - Leaflet 1.9.4
+  - Firebase SDK 10.12.2 (compat)
+  - jsPDF 2.5.1
+
+*Rallye Photo Barbizon — README généré automatiquement*
+`;
+  const blob = new Blob([content], { type: 'text/markdown;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'README_Rallye_Barbizon.md';
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+</script>
+</body>
+</html>
